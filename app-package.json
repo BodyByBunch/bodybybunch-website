@@ -12,8 +12,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "type-check": "tsc --noEmit",
-    "ui:add": "npx shadcn@latest add",
-    "ui:init": "npx shadcn@latest init"
+    "ui:add": "bunx shadcn@latest add",
+    "ui:init": "bunx shadcn@latest init"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
