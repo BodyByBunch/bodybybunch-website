@@ -47,14 +47,8 @@ export interface NavItem {
   children?: NavItem[];
 }
 
-// Kit-related types
-export type { Kit, KitType } from './kit';
-
-// Tenant configuration types
-export type { TenantConfig, TenantFeatures } from './tenant';
-
 // User and patient types
 export type { RegisteredTo, PatientInfo } from './user';
 
-// Test result types
-export type { Result } from './result'; 
+// Auth types
+export type { User, AuthSession, AuthContextType, WorkOSUser } from './auth'; 

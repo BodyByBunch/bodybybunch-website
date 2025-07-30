@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Next.js App Template",
-  description: "Modern Next.js template with TypeScript and Tailwind CSS",
+  title: "Body By Bunch - Personal Training & Fitness Coaching",
+  description: "Transform your life with Lane Bunch, NASM Certified Personal Trainer & Nutrition Coach. Fitness, Nutrition, Accountability - Austin, TX",
+  keywords: "personal trainer, fitness coach, nutrition coach, weight loss, Austin TX, NASM certified",
+  authors: [{ name: "Lane Bunch" }],
+  openGraph: {
+    title: "Body By Bunch - Personal Training & Fitness Coaching",
+    description: "Transform your life with Lane Bunch, NASM Certified Personal Trainer & Nutrition Coach",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} antialiased font-sans`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

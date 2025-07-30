@@ -7,10 +7,7 @@ This directory contains all TypeScript interfaces and types organized by domain 
 ```
 types/
 ├── index.ts          # Re-exports all types for easy importing
-├── kit.ts           # Kit registration and kit type interfaces
-├── tenant.ts        # Multi-tenant configuration interfaces
-├── user.ts          # User and patient information interfaces
-├── result.ts        # Test result interfaces
+├── user.ts          # User and client information interfaces
 └── README.md        # This documentation
 ```
 
@@ -20,37 +17,32 @@ types/
 
 ```typescript
 // Import all types (recommended)
-import { Kit, TenantFeatures, PatientInfo } from '@/types';
+import { User, PatientInfo } from '@/types';
 
 // Import specific domain types (for focused imports)
-import { TenantConfig, TenantFeatures } from '@/types/tenant';
-import { Kit, KitType } from '@/types/kit';
+import { RegisteredTo, PatientInfo } from '@/types/user';
 ```
 
 ### Adding New Types
 
-1. **Determine the domain** - Does it relate to kits, users, tenants, or results?
+1. **Determine the domain** - Does it relate to users, clients, or general app functionality?
 2. **Add to appropriate file** - Add the interface to the relevant domain file
 3. **Export from index.ts** - Add the export to `index.ts` for easy access
 4. **Update documentation** - Update this README if adding a new domain
 
 ## Type Categories
 
-### Kit Types (`kit.ts`)
-- `Kit` - Complete kit information with tenant config
-- `KitType` - Kit type definition with panels and description
-
-### Tenant Types (`tenant.ts`)
-- `TenantConfig` - Complete tenant configuration
-- `TenantFeatures` - Feature flags for post-registration routing
-
 ### User Types (`user.ts`)
-- `RegisteredTo` - Patient information from registration
-- `PatientInfo` - Form data structure for patient info
+- `RegisteredTo` - Client registration information
+- `PatientInfo` - Client demographic information
 
-### Result Types (`result.ts`)
-- `Result` - Lab test result structure
+### Common Types (`index.ts`)
+- `User` - Basic user information
+- `AuthState` - Authentication state management
+- `ApiResponse` - Standard API response format
+- `FormField` - Form field configuration
+- `NavItem` - Navigation menu items
 
 ## Backward Compatibility
 
-The root `types.ts` file re-exports all types from this directory, maintaining compatibility with existing imports throughout the codebase. 
+The root `index.ts` file re-exports all types from this directory, maintaining compatibility with existing imports throughout the codebase. 

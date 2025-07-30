@@ -1,4 +1,5 @@
-export interface WorkOSUser {
+// Generic user interface that can work with various auth providers
+export interface User {
   id: string;
   email: string;
   first_name?: string;
@@ -7,10 +8,14 @@ export interface WorkOSUser {
   created_at: string;
   updated_at: string;
   profile_picture_url?: string;
+  role?: string;
+}
+
+// WorkOS specific types (for future integration)
+export interface WorkOSUser extends User {
   organizationId?: string;
   organization_id?: string;
   organizationMemberships?: WorkOSOrganizationMembership[];
-  role?: string;
   roleSlug?: string;
 }
 
@@ -32,14 +37,13 @@ export interface WorkOSOrganizationMembership {
 }
 
 export interface AuthSession {
-  user: WorkOSUser;
-  organization_memberships?: WorkOSOrganizationMembership[];
+  user: User;
   access_token?: string;
   expires_at?: number;
 }
 
 export interface AuthContextType {
-  user: WorkOSUser | null;
+  user: User | null;
   session: AuthSession | null;
   isLoading: boolean;
   isAuthenticated: boolean;

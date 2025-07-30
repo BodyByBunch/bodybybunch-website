@@ -20,18 +20,22 @@ function getBooleanEnvVar(name: string, defaultValue = false): boolean {
 export const env = {
   // App Configuration
   NEXT_PUBLIC_APP_URL: getEnvVar('NEXT_PUBLIC_APP_URL', 'http://localhost:3000'),
-  NEXT_PUBLIC_APP_NAME: getEnvVar('NEXT_PUBLIC_APP_NAME', 'Next.js App'),
+  NEXT_PUBLIC_APP_NAME: getEnvVar('NEXT_PUBLIC_APP_NAME', 'Body By Bunch'),
   
-  // API Configuration
+  // API Configuration (for future features like contact forms, booking, etc.)
   NEXT_PUBLIC_API_BASE_URL: getEnvVar('NEXT_PUBLIC_API_BASE_URL', 'http://localhost:8000/api'),
   
-  // NextAuth Configuration
-  NEXTAUTH_URL: getEnvVar('NEXTAUTH_URL', 'http://localhost:3000'),
-  NEXTAUTH_SECRET: getEnvVar('NEXTAUTH_SECRET'),
+  // Contact Form Configuration
+  NEXT_PUBLIC_CONTACT_EMAIL: getEnvVar('NEXT_PUBLIC_CONTACT_EMAIL', 'lane@bodybybunch.com'),
+  
+  // Authentication Configuration (for future WorkOS integration)
+  NEXT_PUBLIC_WORKOS_PUBLISHABLE_KEY: getEnvVar('NEXT_PUBLIC_WORKOS_PUBLISHABLE_KEY', ''),
+  WORKOS_SECRET_KEY: getEnvVar('WORKOS_SECRET_KEY', ''),
+  NEXT_PUBLIC_WORKOS_REDIRECT_URI: getEnvVar('NEXT_PUBLIC_WORKOS_REDIRECT_URI', 'http://localhost:3000/auth/callback'),
   
   // Feature Flags
   NEXT_PUBLIC_ENABLE_ANALYTICS: getBooleanEnvVar('NEXT_PUBLIC_ENABLE_ANALYTICS', true),
-  NEXT_PUBLIC_ENABLE_NOTIFICATIONS: getBooleanEnvVar('NEXT_PUBLIC_ENABLE_NOTIFICATIONS', false),
+  NEXT_PUBLIC_ENABLE_CONTACT_FORM: getBooleanEnvVar('NEXT_PUBLIC_ENABLE_CONTACT_FORM', true),
   
   // Development
   NODE_ENV: process.env.NODE_ENV || 'development',
