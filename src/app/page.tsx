@@ -7,6 +7,7 @@ import {
   ServicesSection,
   CertificationsSection,
   TestimonialsSectionEnhanced,
+  PricingSection,
   CTASection
 } from '@/components/home';
 
@@ -19,7 +20,7 @@ export default function HomePage() {
         <WhySection />
         <ServicesSection />
         <Separator />
-        {/* <CertificationsSection /> */}
+        <PricingSection />
         <TestimonialsSectionEnhanced layout="circular" />
         <CTASection />
       </main>
