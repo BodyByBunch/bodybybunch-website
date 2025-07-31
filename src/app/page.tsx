@@ -3,9 +3,10 @@ import { Footer } from '@/components/footer';
 import { Separator } from '@/components/ui/separator';
 import {
   HeroThemeAware,
+  WhySection,
   ServicesSection,
   CertificationsSection,
-  TestimonialsSection,
+  TestimonialsSectionEnhanced,
   CTASection
 } from '@/components/home';
 
@@ -15,10 +16,11 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroThemeAware />
+        <WhySection />
         <ServicesSection />
         <Separator />
-        <CertificationsSection />
-        <TestimonialsSection />
+        {/* <CertificationsSection /> */}
+        <TestimonialsSectionEnhanced layout="circular" />
         <CTASection />
       </main>
       <Footer />

@@ -8,6 +8,7 @@ This directory contains all static image assets for the Body By Bunch website, o
 public/images/
 ├── brand/          # Logo and branding assets
 ├── hero/           # Hero section backgrounds and images
+├── why/            # Why section value proposition images
 ├── services/       # Service-related images
 ├── testimonials/   # Client photos and testimonials
 ├── team/           # Team member photos
@@ -33,6 +34,27 @@ public/images/
 - `sliderbg-2-bodybybunch.jpg` - New light mode hero image (positioned right)
 - `sliderbg-bodybybunch-300x200.jpg` - Small version 300x200px (legacy)
 - `sliderbg-bodybybunch-crop-300x170.jpg` - Cropped small version (backup)
+
+## 🎯 Why Section Images (`/why`)
+Images showcasing the unique value propositions and differentiators of Body By Bunch services.
+
+### Image Specifications:
+- **Dimensions**: 256x256px minimum (displayed as 256x256px)
+- **Format**: JPG for photos, PNG for graphics with transparency
+- **Style**: Professional, clean, high-quality photography
+- **Theme**: Fitness, nutrition, coaching, personal connection
+
+### Required Images:
+- `personalized-training.jpg` - Custom workout planning and form correction
+- `nutrition-education.jpg` - Healthy meal prep, education, balanced lifestyle
+- `ongoing-support.jpg` - Coach-client interaction, accountability, motivation
+- `certified-expertise.jpg` - NASM certifications, professional credentials
+
+### 📝 Image Guidelines:
+- **Personalized Training**: Show one-on-one coaching, form correction, custom workout planning
+- **Nutrition Education**: Healthy foods, meal planning, education (not restrictive dieting)
+- **Ongoing Support**: Phone/text communication, motivation, celebration of wins
+- **Certified Expertise**: Professional setting, certifications, evidence-based approach
 
 ## 🎯 Services Images (`/services`)
 - **Service illustrations**: Visual representations of services

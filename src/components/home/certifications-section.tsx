@@ -8,10 +8,10 @@ export function CertificationsSection() {
           Professional Certifications
         </h2>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Badge className="text-lg px-6 py-3 bg-teal-600 text-white hover:bg-teal-700">
+          <Badge className="text-lg px-6 py-3 bg-teal-600 text-white hover:bg-teal-700 transition-colors">
             NASM Certified Personal Trainer
           </Badge>
-          <Badge className="text-lg px-6 py-3 bg-orange-600 text-white hover:bg-orange-700">
+          <Badge className="text-lg px-6 py-3 bg-orange-600 text-white hover:bg-orange-700 transition-colors">
             NASM Certified Nutrition Coach
           </Badge>
         </div>

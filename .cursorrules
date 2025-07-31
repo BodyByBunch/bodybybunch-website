@@ -1,0 +1,24 @@
+# Cursor AI Rules for Body By Bunch Project
+
+## Package Manager Preference
+- Always use `bun` or `bunx` when possible for package management and script execution
+- Only fallback to `npm` or `npx` if bun commands fail
+- Examples:
+  - Use `bunx create-next-app` instead of `npx create-next-app`
+  - Use `bun add` instead of `npm install`
+  - Use `bun run` instead of `npm run`
+
+## Project-Specific Guidelines
+- This is a Next.js 15 project with TypeScript and Tailwind CSS
+- Uses shadcn/ui components and next-themes for dark/light mode
+- Image assets go in `/public/images/` with organized subdirectories
+- Components use barrel exports from `index.ts` files
+- Theme-aware components should use CSS variables and Tailwind dark: prefixes
+- Prefer component composition over monolithic components
+
+## Git Workflow
+- When user says "perfect, it is now working as expected" or "ok great, lets commit our changes" similar satisfaction phrases after fixing a bug or adding a feature, automatically run `git add .` and compose a descriptive commit message that summarizes the changes made
+- Commit messages should follow conventional commit format: `type(scope): description`
+- Types: feat, fix, refactor, docs, style, test, chore
+- Include specific details about what was changed or fixed
+- Update any relevant documentation (README, API docs, process docs) when changes affect public interfaces, workflows, or system behavior
