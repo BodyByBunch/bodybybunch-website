@@ -9,5 +9,4 @@ export { CertificationsSection } from './certifications-section';
 export { TestimonialsSection } from './testimonials-section';
 export { TestimonialsSectionEnhanced } from './testimonials-section-enhanced';
 export { TestimonialsSlider } from './testimonials-slider';
-export { RollingGallery } from '../ui/RollingGallery';
 export { CTASection } from './cta-section'; 

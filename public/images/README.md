@@ -10,6 +10,7 @@ public/images/
 ├── hero/           # Hero section backgrounds and images
 ├── why/            # Why section value proposition images
 ├── services/       # Service-related images
+├── training/       # Client training sessions and workout photos
 ├── testimonials/   # Client photos and testimonials
 ├── team/           # Team member photos
 └── icons/          # Custom icons and small graphics
@@ -60,6 +61,19 @@ Images showcasing the unique value propositions and differentiators of Body By B
 - **Service illustrations**: Visual representations of services
 - **Equipment photos**: Gym and training equipment
 - **Activity shots**: Training session photos
+
+## 💪 Training Images (`/training`)
+- **Client training sessions**: Photos of clients working out with the trainer
+- **Workout demonstrations**: Exercise form and technique shots
+- **Training environments**: Gym, home, or outdoor training settings
+- **Progress tracking**: Before/after photos (with client permission)
+- **Motivational shots**: Action shots during workouts
+
+### Image Specifications:
+- **Dimensions**: 800x600px minimum (4:3 ratio recommended)
+- **Format**: JPG for photos, PNG for graphics with transparency
+- **Style**: Professional, motivational, high-quality photography
+- **Theme**: Fitness, training, coaching, personal development
 
 ## 💬 Testimonials (`/testimonials`)
 - **Client photos**: Profile pictures for testimonials

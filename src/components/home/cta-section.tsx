@@ -14,12 +14,12 @@ export function CTASection() {
           Your success story could be next!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="text-lg px-8 py-4 bg-orange-600 text-white hover:bg-orange-700 border-0">
+          <Button size="lg" className="text-lg px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 border-0">
             <Phone className="mr-2 h-5 w-5" />
             Call (512) 818-4281
           </Button>
           <Link href="/contact">
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-slate-900">
               Schedule Consultation
             </Button>
           </Link>

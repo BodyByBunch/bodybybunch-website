@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Star } from 'lucide-react';
 import Link from 'next/link';
 import { TestimonialsSlider } from './testimonials-slider';
+import { testimonialsData } from '@/data';
 
 interface TestimonialsSectionEnhancedProps {
   layout?: 'cards' | 'circular' | 'rolling';
@@ -12,30 +13,6 @@ interface TestimonialsSectionEnhancedProps {
 export function TestimonialsSectionEnhanced({ 
   layout = 'cards' 
 }: TestimonialsSectionEnhancedProps) {
-  
-  const testimonialData = [
-    {
-      id: '1',
-      name: 'Sarah M.',
-      achievement: '-45 lbs in 6 months',
-      quote: 'Lane completely changed my life! I lost 45 pounds and gained so much confidence. Her nutrition coaching was the missing piece I needed.',
-      rating: 5
-    },
-    {
-      id: '2', 
-      name: 'Mike R.',
-      achievement: '+20 lbs muscle',
-      quote: 'Working with Lane has been incredible. I gained 20 pounds of muscle and finally achieved the physique I\'ve always wanted.',
-      rating: 5
-    },
-    {
-      id: '3',
-      name: 'Jennifer L.',
-      achievement: '-30 lbs in 4 months', 
-      quote: 'Lane\'s accountability and support made all the difference. I lost 30 pounds and learned how to maintain a healthy lifestyle.',
-      rating: 5
-    }
-  ];
 
   return (
     <section className="py-20 bg-slate-900">
@@ -52,7 +29,7 @@ export function TestimonialsSectionEnhanced({
         {/* Render based on layout prop */}
         {layout === 'cards' && (
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-            {testimonialData.map((testimonial) => (
+            {testimonialsData.map((testimonial) => (
               <Card key={testimonial.id} className="bg-slate-700 border-slate-600 text-white">
                 <CardHeader>
                   <div className="flex items-center justify-between">
@@ -79,7 +56,7 @@ export function TestimonialsSectionEnhanced({
           <div className="mb-12">
             <TestimonialsSlider 
               variant={layout} 
-              testimonials={testimonialData}
+              testimonials={testimonialsData}
             />
           </div>
         )}

@@ -20,18 +20,12 @@ export function WhySection() {
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/why/personalized-training.jpg"
+                  src="/images/why/why_img_1.jpeg"
                   alt="Personalized training approach"
                   width={256}
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Placeholder overlay - remove when image is added */}
-                <div className="absolute inset-0 bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center">
-                  <span className="text-teal-600 dark:text-teal-300 font-bold text-lg text-center px-4">
-                    Personalized<br />Training
-                  </span>
-                </div>
               </div>
             </div>
             <div className="text-center md:text-left flex-1 max-w-lg">
@@ -51,18 +45,12 @@ export function WhySection() {
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/why/nutrition-education.jpg"
+                  src="/images/why/why_img_2.jpeg"
                   alt="Nutrition education and coaching"
                   width={256}
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Placeholder overlay - remove when image is added */}
-                <div className="absolute inset-0 bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center">
-                  <span className="text-orange-600 dark:text-orange-300 font-bold text-lg text-center px-4">
-                    Nutrition<br />Education
-                  </span>
-                </div>
               </div>
             </div>
             <div className="text-center md:text-right flex-1 max-w-lg">
@@ -82,18 +70,12 @@ export function WhySection() {
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/why/ongoing-support.jpg"
+                  src="/images/why/why_img_3.jpeg"
                   alt="Ongoing support and accountability"
                   width={256}
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Placeholder overlay - remove when image is added */}
-                <div className="absolute inset-0 bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center">
-                  <span className="text-teal-600 dark:text-teal-300 font-bold text-lg text-center px-4">
-                    Ongoing<br />Support
-                  </span>
-                </div>
               </div>
             </div>
             <div className="text-center md:text-left flex-1 max-w-lg">
@@ -114,18 +96,12 @@ export function WhySection() {
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/why/certified-expertise.jpg"
+                  src="/images/why/why_img_4.jpeg"
                   alt="NASM certified trainer expertise"
                   width={256}
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Placeholder overlay - remove when image is added */}
-                <div className="absolute inset-0 bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center">
-                  <span className="text-orange-600 dark:text-orange-300 font-bold text-lg text-center px-4">
-                    Certified<br />Expertise
-                  </span>
-                </div>
               </div>
             </div>
             <div className="text-center md:text-right flex-1 max-w-lg">
