@@ -26,6 +26,8 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
             <div className="text-center md:text-left flex-1 max-w-lg">
@@ -51,6 +53,8 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
             <div className="text-center md:text-right flex-1 max-w-lg">
@@ -76,6 +80,8 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
             <div className="text-center md:text-left flex-1 max-w-lg">
@@ -102,6 +108,8 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
             <div className="text-center md:text-right flex-1 max-w-lg">
