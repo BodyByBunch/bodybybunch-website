@@ -2,7 +2,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Separator } from '@/components/ui/separator';
 import {
-  HeroSection,
+  HeroThemeAware,
   ServicesSection,
   CertificationsSection,
   TestimonialsSection,
@@ -14,7 +14,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <HeroSection />
+        <HeroThemeAware />
         <ServicesSection />
         <Separator />
         <CertificationsSection />

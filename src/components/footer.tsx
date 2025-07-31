@@ -1,10 +1,14 @@
 import { Phone } from 'lucide-react';
+import { FooterLogo } from '@/components/ui/logo';
 
 export function Footer() {
   return (
     <footer className="bg-background border-t border-border py-8">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-6">
+          <div className="flex justify-center mb-4">
+            <FooterLogo />
+          </div>
           <h3 className="text-2xl font-bold mb-2 text-foreground">Body By Bunch</h3>
           <p className="text-muted-foreground mb-4">
             NASM Certified Personal Trainer<br />

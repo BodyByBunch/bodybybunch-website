@@ -2,16 +2,17 @@ import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/mode-toggle';
 import { Phone } from 'lucide-react';
 import Link from 'next/link';
+import { HeaderLogo } from '@/components/ui/logo';
+import { BrandName } from '@/components/ui/brand-name';
 
 export function Header() {
   return (
     <header className="bg-background border-b border-border py-4 px-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-foreground">
-            Body By Bunch
-          </h1>
+        <div className="flex items-center space-x-3">
+          <HeaderLogo />
+          <BrandName variant="sporty" format="camelCase" className="hidden sm:block" />
         </div>
 
         {/* Navigation */}

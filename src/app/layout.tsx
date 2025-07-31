@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description: "Transform your life with Lane Bunch, NASM Certified Personal Trainer & Nutrition Coach. Fitness, Nutrition, Accountability - Austin, TX",
   keywords: "personal trainer, fitness coach, nutrition coach, weight loss, Austin TX, NASM certified",
   authors: [{ name: "Lane Bunch" }],
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: "Body By Bunch - Personal Training & Fitness Coaching",
     description: "Transform your life with Lane Bunch, NASM Certified Personal Trainer & Nutrition Coach",
