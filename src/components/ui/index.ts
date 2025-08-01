@@ -7,3 +7,4 @@ export { Badge } from './badge';
 export { Progress } from './progress';
 export { RadioGroup, RadioGroupItem } from './radio-group';
 export { Separator } from './separator'; 
+export { ScrollLink } from './scroll-link';
