@@ -7,9 +7,9 @@ import {
   ServicesSection,
   CertificationsSection,
   TestimonialsSectionEnhanced,
-  PricingSection,
-  CTASection
+  PricingSection
 } from '@/components/home';
+import { CTASection } from '@/components/cta';
 
 export default function HomePage() {
   return (
