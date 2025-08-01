@@ -15,7 +15,7 @@ export function TestimonialsSectionEnhanced({
 }: TestimonialsSectionEnhancedProps) {
 
   return (
-    <section className="py-20 bg-slate-900">
+    <section id="testimonials" className="py-20 bg-slate-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -63,7 +63,7 @@ export function TestimonialsSectionEnhanced({
 
         <div className="text-center">
           <Link href="/testimonials">
-            <Button variant="outline" size="lg" className="border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white">
+                          <Button variant="outline" size="lg" className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
               View All Success Stories
             </Button>
           </Link>

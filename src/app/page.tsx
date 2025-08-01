@@ -5,7 +5,6 @@ import {
   HeroThemeAware,
   WhySection,
   ServicesSection,
-  CertificationsSection,
   TestimonialsSectionEnhanced,
   PricingSection
 } from '@/components/home';

@@ -25,7 +25,7 @@ export function AboutCredentials() {
             <Card className="max-w-2xl mx-auto">
               <CardHeader className="text-center">
                 <div className="mx-auto w-16 h-16 bg-teal-100 dark:bg-teal-900/30 rounded-full flex items-center justify-center mb-4">
-                  <GraduationCap className="h-8 w-8 text-teal-600 dark:text-teal-400" />
+                  <GraduationCap className="h-8 w-8 text-brand-sky dark:text-brand-sky-light" />
                 </div>
                 <CardTitle className="text-xl">Texas State University</CardTitle>
               </CardHeader>
@@ -48,7 +48,7 @@ export function AboutCredentials() {
               <Card className="text-center">
                 <CardHeader>
                   <div className="mx-auto w-16 h-16 bg-teal-100 dark:bg-teal-900/30 rounded-full flex items-center justify-center mb-4">
-                    <Award className="h-8 w-8 text-teal-600 dark:text-teal-400" />
+                    <Award className="h-8 w-8 text-brand-sky dark:text-brand-sky-light" />
                   </div>
                   <CardTitle className="text-lg">NASM Certified</CardTitle>
                 </CardHeader>
@@ -93,7 +93,7 @@ export function AboutCredentials() {
               <Card className="text-center">
                 <CardContent className="pt-6">
                   <div className="mx-auto w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-full flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+                    <Users className="h-6 w-6 text-brand-sky dark:text-brand-sky-light" />
                   </div>
                   <h4 className="font-semibold text-foreground mb-2">Personal Trainer</h4>
                   <p className="text-sm text-muted-foreground">One-on-one coaching</p>
@@ -136,7 +136,7 @@ export function AboutCredentials() {
           <div className="mt-16 text-center">
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div>
-                <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 mb-2">5+</div>
+                                  <div className="text-3xl font-bold text-brand-sky dark:text-brand-sky-light mb-2">5+</div>
                 <p className="text-lg font-semibold text-foreground mb-1">Years Certified</p>
                 <p className="text-sm text-muted-foreground">Personal Training Experience</p>
               </div>

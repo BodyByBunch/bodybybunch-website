@@ -40,7 +40,7 @@ export function TransformationsGrid() {
           </h3>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">500+</div>
+                                   <div className="text-3xl font-bold text-brand-sky mb-2">500+</div>
               <p className="text-lg font-semibold text-foreground">Successful Transformations</p>
             </div>
             <div>

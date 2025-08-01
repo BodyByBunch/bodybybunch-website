@@ -40,7 +40,7 @@ export function TestimonialsHero() {
                     
                     {/* Achievement badge on image */}
                     <div className="absolute bottom-4 left-4">
-                      <Badge className="bg-teal-600 text-white text-sm px-3 py-1">
+                      <Badge className="bg-brand-sky text-white text-sm px-3 py-1">
                         {testimonial.achievement}
                       </Badge>
                     </div>
@@ -49,7 +49,7 @@ export function TestimonialsHero() {
                   {/* Content */}
                   <div className={`p-6 lg:p-8 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                     {/* Quote Icon */}
-                    <Quote className="h-8 w-8 text-teal-600 mb-4 opacity-60" />
+                    <Quote className="h-8 w-8 text-brand-sky mb-4 opacity-60" />
                     
                     {/* Quote Text */}
                     <blockquote className="text-lg lg:text-xl text-foreground leading-relaxed mb-6 font-medium">
@@ -80,7 +80,7 @@ export function TestimonialsHero() {
 
                       {/* Read More Button */}
                       <button 
-                        className="group inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-semibold transition-colors text-sm"
+                        className="group inline-flex items-center gap-2 text-brand-sky hover:text-primary font-semibold transition-colors text-sm"
                         onClick={() => {
                           // You can implement a modal or expand functionality here
                           console.log('Read full testimonial:', testimonial.fullText);

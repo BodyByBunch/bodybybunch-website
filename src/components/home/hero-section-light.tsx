@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { Phone, Award, MapPin, Target, Heart } from 'lucide-react';
+import { CalendlyButton } from '@/components/ui/calendly-button';
+import { Award, MapPin, Target, Heart, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 export function HeroSectionLight() {
@@ -12,10 +13,10 @@ export function HeroSectionLight() {
           <div className="space-y-8">
             {/* Tagline */}
             <div className="space-y-2">
-              <p className="font-semibold tracking-wide uppercase text-sm" style={{color: '#fb923c'}}>
+              <p className="font-semibold tracking-wide uppercase text-sm text-brand-orange">
                 NASM Certified Personal Trainer & Nutrition Coach
               </p>
-              <div className="w-16 h-1 shadow-lg" style={{backgroundColor: '#fb923c'}}></div>
+              <div className="w-16 h-1 shadow-lg bg-brand-orange"></div>
             </div>
 
             {/* Main Headline */}
@@ -25,7 +26,7 @@ export function HeroSectionLight() {
                 <br />
                 <span className="text-foreground">Nutrition.</span>
                 <br />
-                <span style={{color: '#0d9488'}}>Accountability.</span>
+                <span className="text-brand-sky">Accountability.</span>
               </h1>
               <p className="text-xl leading-relaxed max-w-lg font-medium text-muted-foreground">
                 "My passion revolves around people. I strive every day to help others become the best version of themselves. 
@@ -35,12 +36,18 @@ export function HeroSectionLight() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300" style={{backgroundColor: '#0d9488', color: '#ffffff'}}>
+              <CalendlyButton
+                calendlyUrl="https://calendly.com/your-calendly-url"
+                size="lg"
+                className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 bg-brand-sky text-white"
+              >
                 Get Started Today
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 transition-all duration-300" style={{borderColor: '#374151', color: '#374151'}} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#374151'; e.currentTarget.style.color = '#ffffff'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#374151'; }}>
-                <Phone className="mr-2 h-5 w-5" />
-                (512) 818-4281
+              </CalendlyButton>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 transition-all duration-300 border-muted-foreground text-muted-foreground hover:bg-muted-foreground hover:text-white" asChild>
+                <a href="#why">
+                  <ArrowRight className="mr-2 h-5 w-5" />
+                  Learn More
+                </a>
               </Button>
             </div>
           </div>
@@ -63,8 +70,8 @@ export function HeroSectionLight() {
             {/* Floating Stats Cards */}
             <div className="absolute -top-8 -right-8 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-border">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-brand-teal rounded-xl flex items-center justify-center">
-                  <Target className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center border border-border">
+                  <Target className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-foreground">500+</p>
@@ -75,11 +82,11 @@ export function HeroSectionLight() {
 
             <div className="absolute -bottom-8 -left-8 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-border">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-brand-orange rounded-xl flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center border border-border">
+                  <MapPin className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-foreground">Austin, TX</p>
+                  <p className="text-xl font-bold text-foreground">San Antonio, TX</p>
                   <p className="text-sm text-muted-foreground">Local & Online</p>
                 </div>
               </div>
@@ -87,8 +94,8 @@ export function HeroSectionLight() {
 
             <div className="absolute top-1/2 -left-12 transform -translate-y-1/2 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-border">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-brand-teal rounded-lg flex items-center justify-center">
-                  <Heart className="h-4 w-4 text-white" />
+                <div className="w-8 h-8 bg-background rounded-lg flex items-center justify-center border border-border">
+                  <Heart className="h-4 w-4 text-foreground" />
                 </div>
                 <div>
                   <p className="text-lg font-bold text-foreground">5+ Years</p>

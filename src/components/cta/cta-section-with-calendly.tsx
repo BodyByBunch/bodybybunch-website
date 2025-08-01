@@ -1,8 +1,8 @@
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
-import Link from 'next/link';
+import { CalendlyButton } from '@/components/ui/calendly-button';
+import { Phone, Calendar } from 'lucide-react';
 
-export function CTASection() {
+export function CTASectionWithCalendly() {
   return (
     <section className="py-20 bg-slate-900 text-white">
       <div className="container mx-auto px-4 text-center">
@@ -18,13 +18,18 @@ export function CTASection() {
             <Phone className="mr-2 h-5 w-5" />
             Call (512) 818-4281
           </Button>
-          <Link href="/contact">
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-slate-900">
-              Schedule Consultation
-            </Button>
-          </Link>
+          {/* Replace the old contact link with Calendly integration */}
+          <CalendlyButton
+            calendlyUrl="https://calendly.com/your-calendly-url"
+            variant="outline"
+            size="lg"
+            className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-slate-900"
+          >
+            <Calendar className="mr-2 h-5 w-5" />
+            Schedule Free Consultation
+          </CalendlyButton>
         </div>
       </div>
     </section>
   );
-} 
+}

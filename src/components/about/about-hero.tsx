@@ -38,11 +38,11 @@ export function AboutHero() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
+                <Button size="lg" className="bg-brand-sky hover:bg-primary text-white">
                   <Calendar className="mr-2 h-5 w-5" />
                   Schedule Free Consultation
                 </Button>
-                <Button size="lg" variant="outline" className="border-teal-500 text-teal-600 hover:bg-teal-50">
+                <Button size="lg" variant="outline" className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
                   <Phone className="mr-2 h-5 w-5" />
                   Call (512) 818-4281
                 </Button>
@@ -65,7 +65,7 @@ export function AboutHero() {
               </div>
               
               {/* Credentials badge */}
-              <div className="absolute -bottom-4 -left-4 bg-teal-600 text-white px-6 py-3 rounded-lg shadow-lg">
+              <div className="absolute -bottom-4 -left-4 bg-brand-sky text-white px-6 py-3 rounded-lg shadow-lg">
                 <div className="text-sm font-semibold">NASM Certified</div>
                 <div className="text-xs opacity-90">Personal Trainer & Nutrition Coach</div>
                 <div className="text-xs opacity-90 mt-1">Weight Loss Specialist</div>

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function ServicesSection() {
   return (
-    <section className="py-20 bg-slate-900">
+    <section id="services" className="py-20 bg-slate-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -47,7 +47,7 @@ export function ServicesSection() {
                 {/* Hidden link that slides up on hover */}
                 <div className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 mt-4">
                   <Link href="/plans">
-                    <Button variant="outline" className="w-full border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white">
+                    <Button variant="outline" className="w-full border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -123,7 +123,7 @@ export function ServicesSection() {
                 {/* Hidden link that slides up on hover */}
                 <div className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 mt-4">
                   <Link href="/plans">
-                    <Button variant="outline" className="w-full border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white">
+                    <Button variant="outline" className="w-full border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

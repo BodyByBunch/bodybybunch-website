@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
+import { CalendlyButton } from '@/components/ui/calendly-button';
 import { ModeToggle } from '@/components/mode-toggle';
-import { Phone } from 'lucide-react';
+import { Phone, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { HeaderLogo } from '@/components/ui/logo';
 import { BrandName } from '@/components/ui/brand-name';
@@ -29,24 +30,22 @@ export function Header() {
           <Link href="/testimonials" className="text-foreground hover:text-primary transition-colors">
             Client Testimonials
           </Link>
-          <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
+          <Link href="#faqs" className="text-foreground hover:text-primary transition-colors">
             Contact
           </Link>
         </nav>
 
-        {/* Phone Number & Theme Toggle */}
+        {/* Schedule & Theme Toggle */}
         <div className="flex items-center space-x-4">
-          <Button
-            variant="ghost"
+          <CalendlyButton
+            calendlyUrl="https://calendly.com/your-calendly-url"
+            variant="default"
             size="sm"
-            className="text-foreground hover:text-secondary"
-            asChild
+            className="bg-brand-sky hover:bg-primary text-white"
           >
-            <a href="tel:5128184281">
-              <Phone className="mr-2 h-4 w-4" />
-              (512) 818-4281
-            </a>
-          </Button>
+            <Calendar className="mr-2 h-4 w-4" />
+            Schedule
+          </CalendlyButton>
           <ModeToggle />
         </div>
       </div>

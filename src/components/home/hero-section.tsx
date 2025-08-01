@@ -21,7 +21,7 @@ export function HeroSection() {
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="text-foreground">Transform Your</span>
                 <br />
-                <span className="text-brand-teal-light">Life Today</span>
+                <span className="text-brand-sky-light">Life Today</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
                 "My passion revolves around people. I strive every day to help others become the best version of themselves. 
@@ -31,7 +31,7 @@ export function HeroSection() {
 
             {/* Call to Action */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                              <Button size="lg" className="text-lg px-8 py-4 bg-brand-teal hover:bg-primary text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                              <Button size="lg" className="text-lg px-8 py-4 bg-brand-sky hover:bg-primary text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   Get Started Today
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-brand-orange text-brand-orange-light hover:bg-brand-orange hover:text-white transition-all duration-300">
@@ -43,12 +43,12 @@ export function HeroSection() {
             {/* Trust Indicators */}
             <div className="flex items-center space-x-6 pt-8">
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-brand-teal-light rounded-full"></div>
+                                  <div className="w-3 h-3 bg-brand-sky-light rounded-full"></div>
                 <span className="text-sm text-muted-foreground">NASM Certified</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-brand-orange-light rounded-full"></div>
-                <span className="text-sm text-muted-foreground">Austin, TX</span>
+                <span className="text-sm text-muted-foreground">San Antonio, TX</span>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export function HeroSection() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-slate-900 font-bold text-lg">Austin</p>
+                    <p className="text-slate-900 font-bold text-lg">San Antonio</p>
                     <p className="text-slate-600 text-xs">Local & Online</p>
                   </div>
                 </div>

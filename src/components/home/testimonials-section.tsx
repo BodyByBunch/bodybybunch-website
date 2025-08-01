@@ -81,7 +81,7 @@ export function TestimonialsSection() {
 
         <div className="text-center">
           <Link href="/testimonials">
-            <Button variant="outline" size="lg" className="border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white">
+                          <Button variant="outline" size="lg" className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
               View All Success Stories
             </Button>
           </Link>

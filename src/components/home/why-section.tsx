@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function WhySection() {
   return (
-    <section className="py-20 bg-background">
+    <section id="why" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -134,13 +134,13 @@ export function WhySection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="tel:5128184281" 
-              className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors"
+                              className="inline-flex items-center px-6 py-3 bg-brand-sky text-white font-semibold rounded-lg hover:bg-primary transition-colors"
             >
               Call (512) 818-4281
             </a>
             <a 
               href="#services" 
-              className="inline-flex items-center px-6 py-3 border border-teal-600 text-teal-600 font-semibold rounded-lg hover:bg-teal-50 transition-colors"
+                              className="inline-flex items-center px-6 py-3 border border-brand-sky text-brand-sky font-semibold rounded-lg hover:bg-brand-sky hover:text-white transition-colors"
             >
               Learn More About Services
             </a>

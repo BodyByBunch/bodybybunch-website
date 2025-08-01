@@ -10,10 +10,10 @@ export function PricingSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            Choose the plan that works for you
+            Training Programs Tailored to Your Goals
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Start with our flexible pricing options. Scale as you grow.
+            Choose the program that best fits your fitness journey. Each plan is customized to your needs.
           </p>
         </div>
 
@@ -34,19 +34,19 @@ export function PricingSection() {
               {/* Features */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>1-on-1 Personal Training Sessions</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Form Corrections & Cues</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Progressive Overloading</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Biomechanics Guidance</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -60,15 +60,15 @@ export function PricingSection() {
               </div>
 
               {/* CTA Button */}
-              <Button className="w-full mt-6 bg-slate-700 hover:bg-slate-600 text-white">
+              <Button className="w-full mt-6 bg-muted-foreground hover:bg-foreground text-background">
                 Schedule A Call
               </Button>
             </CardContent>
           </Card>
 
           {/* Full Program (Featured) */}
-          <Card className="relative bg-card text-card-foreground border-2 border-teal-500 hover:shadow-xl transition-shadow">
-            <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white px-4 py-1">
+                        <Card className="relative bg-card text-card-foreground border-2 border-brand-sky hover:shadow-xl transition-shadow">
+            <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white px-4 py-1">
               Most Popular
             </Badge>
             <CardHeader className="pb-8 pt-8">
@@ -83,37 +83,37 @@ export function PricingSection() {
               {/* Features */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Complete Cardio, Nutrition & Workout Programs</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Coaching, Education & Zoom Meetings</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Form Corrections & Progressive Overloading</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Daily Nutritional Coaching</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>3-6x Weekly Check-ins</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Weekly Monday Data Analysis</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>24/7 Support & Accountability</span>
                 </div>
               </div>
 
               {/* CTA Button */}
-              <Button className="w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white">
+                                <Button className="w-full mt-6 bg-brand-sky hover:bg-primary text-white">
                 Schedule A Call
               </Button>
             </CardContent>
@@ -133,19 +133,19 @@ export function PricingSection() {
               {/* Features */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Daily Nutritional Coaching</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Macro Manipulation Guidance</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Lifestyle Education (Not Meal Plans)</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-teal-500" />
+                  <Check className="h-5 w-5 text-brand-sky" />
                   <span>Weekly Check-ins</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -159,7 +159,7 @@ export function PricingSection() {
               </div>
 
               {/* CTA Button */}
-              <Button className="w-full mt-6 bg-slate-700 hover:bg-slate-600 text-white">
+              <Button className="w-full mt-6 bg-muted-foreground hover:bg-foreground text-background">
                 Schedule A Call
               </Button>
             </CardContent>
@@ -172,12 +172,12 @@ export function PricingSection() {
             Not sure which plan is right for you?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" className="border-teal-500 text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-950">
+                              <Button variant="outline" className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
               <Phone className="mr-2 h-4 w-4" />
               Call (512) 818-4281
             </Button>
             <Link href="/contact">
-              <Button className="bg-teal-600 hover:bg-teal-700 text-white">
+                                <Button className="bg-brand-sky hover:bg-primary text-white">
                 Schedule Free Consultation
               </Button>
             </Link>

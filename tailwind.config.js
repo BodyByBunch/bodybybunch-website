@@ -53,8 +53,8 @@ module.exports = {
           '5': 'hsl(var(--chart-5))'
         },
         brand: {
-          teal: 'hsl(var(--brand-teal))',
-          'teal-light': 'hsl(var(--brand-teal-light))',
+          sky: 'hsl(var(--brand-sky))',
+          'sky-light': 'hsl(var(--brand-sky-light))',
           orange: 'hsl(var(--brand-orange))',
           'orange-light': 'hsl(var(--brand-orange-light))'
         }

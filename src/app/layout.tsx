@@ -10,8 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Body By Bunch - Personal Training & Fitness Coaching",
-  description: "Transform your life with Lane Bunch, NASM Certified Personal Trainer & Nutrition Coach. Fitness, Nutrition, Accountability - Austin, TX",
-  keywords: "personal trainer, fitness coach, nutrition coach, weight loss, Austin TX, NASM certified",
+  description: "Transform your life with Lane Bunch, NASM Certified Personal Trainer & Nutrition Coach. Fitness, Nutrition, Accountability - San Antonio, TX",
+  keywords: "personal trainer, fitness coach, nutrition coach, weight loss, San Antonio TX, NASM certified",
   authors: [{ name: "Lane Bunch" }],
   icons: {
     icon: '/favicon.png',
@@ -32,6 +32,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+      </head>
       <body
         className={`${inter.variable} antialiased font-sans`}
       >

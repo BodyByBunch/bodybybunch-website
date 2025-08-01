@@ -1,9 +1,10 @@
+'use client';
+
 import React from 'react';
 import { type VariantProps } from 'class-variance-authority';
-import { buttonVariants } from '@/components/ui/button-variants'; // Use variants directly
 import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
-// Ensure Calendly is declared on the window object
 declare global {
   interface Window {
     Calendly?: {
@@ -12,7 +13,6 @@ declare global {
   }
 }
 
-// Define props, extending standard anchor attributes and adding variant props + calendlyUrl
 export interface CalendlyButtonProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
     VariantProps<typeof buttonVariants> {
@@ -21,23 +21,17 @@ export interface CalendlyButtonProps
 
 const CalendlyButton = React.forwardRef<HTMLAnchorElement, CalendlyButtonProps>(
   ({ className, variant, size, children, calendlyUrl, onClick, ...props }, ref) => {
-
     const handleScheduleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-      // Prevent default anchor behavior
       event.preventDefault();
-
-      // Call original onClick if provided
       if (onClick) {
         onClick(event);
       }
-
-      // Open Calendly popup
       if (window.Calendly) {
         window.Calendly.initPopupWidget({ url: calendlyUrl });
       } else {
         console.error('Calendly widget script not loaded.');
-        // Fallback: Maybe redirect to the Calendly URL directly
-        window.location.href = calendlyUrl;
+        // Fallback to direct link
+        window.open(calendlyUrl, '_blank');
       }
       return false;
     };
@@ -45,10 +39,10 @@ const CalendlyButton = React.forwardRef<HTMLAnchorElement, CalendlyButtonProps>(
     return (
       <a
         ref={ref}
-        href={calendlyUrl} // Provide the URL as href for fallback/SEO
+        href={calendlyUrl}
         onClick={handleScheduleClick}
-        className={cn(buttonVariants({ variant, size, className }))} // Apply button styles
-        {...props} // Pass down other anchor props
+        className={cn(buttonVariants({ variant, size }), className)}
+        {...props}
       >
         {children}
       </a>
@@ -57,4 +51,4 @@ const CalendlyButton = React.forwardRef<HTMLAnchorElement, CalendlyButtonProps>(
 );
 CalendlyButton.displayName = 'CalendlyButton';
 
-export { CalendlyButton }; 
+export { CalendlyButton };

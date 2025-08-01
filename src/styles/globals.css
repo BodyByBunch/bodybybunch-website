@@ -35,6 +35,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-brand-sky: var(--brand-sky);
+  --color-brand-sky-light: var(--brand-sky-light);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-light: var(--brand-orange-light);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -49,12 +53,12 @@
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.6 0.15 180); /* teal-600 #0d9488 - Body By Bunch teal */
+  --primary: oklch(0.65 0.25 200); /* New main brand color */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.65 0.12 85); /* #99874a - Body By Bunch gold */
   --secondary-foreground: oklch(0.985 0 0);
-  --brand-teal: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
-  --brand-teal-light: oklch(0.7 0.15 180); /* teal-400 */
+  --brand-sky: oklch(0.65 0.25 200); /* sky-500 brand color */
+  --brand-sky-light: oklch(0.75 0.25 200); /* sky-400 lighter variant */
   --brand-orange: oklch(0.65 0.2 45); /* orange-600 */
   --brand-orange-light: oklch(0.75 0.2 45); /* orange-400 */
   --muted: oklch(0.967 0.001 286.375);
@@ -64,20 +68,20 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.6 0.15 180); /* teal-600 #0d9488 - Body By Bunch teal */
-  --chart-1: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
+  --ring: oklch(0.65 0.25 200); /* New main brand color */
+  --chart-1: oklch(0.65 0.25 200); /* New main brand color */
   --chart-2: oklch(0.65 0.12 85); /* #99874a */
   --chart-3: oklch(0.646 0.222 41.116);
   --chart-4: oklch(0.6 0.118 184.704);
   --chart-5: oklch(0.398 0.07 227.392);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
+  --sidebar-primary: oklch(0.65 0.25 200); /* New main brand color */
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.65 0.12 85); /* #99874a */
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
+  --sidebar-ring: oklch(0.65 0.25 200); /* New main brand color */
 }
 
 .dark {
@@ -87,12 +91,12 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.6 0.15 180); /* teal-600 #0d9488 - Body By Bunch teal */
+  --primary: oklch(0.65 0.25 200); /* New main brand color */
   --primary-foreground: oklch(0.21 0.006 285.885);
   --secondary: oklch(0.65 0.12 85); /* #99874a - Body By Bunch gold */
   --secondary-foreground: oklch(0.985 0 0);
-  --brand-teal: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
-  --brand-teal-light: oklch(0.7 0.15 180); /* teal-400 */
+  --brand-sky: oklch(0.65 0.25 200); /* sky-500 brand color */
+  --brand-sky-light: oklch(0.75 0.25 200); /* sky-400 lighter variant */
   --brand-orange: oklch(0.65 0.2 45); /* orange-600 */
   --brand-orange-light: oklch(0.75 0.2 45); /* orange-400 */
   --muted: oklch(0.274 0.006 286.033);
@@ -102,20 +106,20 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.6 0.15 180); /* teal-600 #0d9488 - Body By Bunch teal */
-  --chart-1: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
+  --ring: oklch(0.65 0.25 200); /* New main brand color */
+  --chart-1: oklch(0.65 0.25 200); /* New main brand color */
   --chart-2: oklch(0.65 0.12 85); /* #99874a */
   --chart-3: oklch(0.488 0.243 264.376);
   --chart-4: oklch(0.696 0.17 162.48);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.21 0.006 285.885);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
+  --sidebar-primary: oklch(0.65 0.25 200); /* New main brand color */
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.65 0.12 85); /* #99874a */
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.6 0.15 180); /* teal-600 #0d9488 */
+  --sidebar-ring: oklch(0.65 0.25 200); /* New main brand color */
 }
 
 @layer base {
@@ -157,7 +161,7 @@
 }
 
 /* Button text overrides for light mode */
-:root:not(.dark) .bg-teal-600 {
+:root:not(.dark) .bg-brand-sky {
   @apply text-white;
 }
 
@@ -170,7 +174,7 @@
 }
 
 /* Ensure buttons with colored backgrounds keep white text */
-:root:not(.dark) .bg-teal-600 *,
+:root:not(.dark) .bg-brand-sky *,
 :root:not(.dark) .bg-orange-600 *,
 :root:not(.dark) .bg-amber-600 * {
   color: white !important;
