@@ -5,9 +5,13 @@ export function AboutStory() {
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            My Story & Mission
-          </h2>
+          <div className="space-y-2 mb-6">
+            <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              My Story & Mission
+            </h2>
+            <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover the journey that led to BodybyBunch and my commitment to helping others 
             achieve their fitness and nutrition goals.
@@ -31,6 +35,7 @@ export function AboutStory() {
               </div>
             </div>
             <div className="text-center md:text-left flex-1 max-w-lg">
+              <div className="w-8 h-1 bg-brand-orange-light mb-3 mx-auto md:mx-0"></div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Education & Foundation
               </h3>

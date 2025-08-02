@@ -9,9 +9,13 @@ export function PricingSection() {
     <section id="pricing" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Training Programs Tailored to Your Goals
-          </h2>
+          <div className="space-y-2 mb-6">
+            <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Training Programs Tailored to Your Goals
+            </h2>
+            <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Choose the program that best fits your fitness journey. Each plan is customized to your needs.
           </p>
@@ -23,6 +27,7 @@ export function PricingSection() {
           {/* Personal Training Plan */}
           <Card className="relative bg-card text-card-foreground border border-border hover:shadow-lg transition-shadow">
             <CardHeader className="pb-8">
+              <div className="w-8 h-1 bg-brand-orange-light mb-3"></div>
               <CardTitle className="text-2xl font-bold">Personal Training</CardTitle>
               <p className="text-muted-foreground">Perfect for individuals looking to start their fitness journey.</p>
               <div className="mt-4">
@@ -72,6 +77,7 @@ export function PricingSection() {
               Most Popular
             </Badge>
             <CardHeader className="pb-8 pt-8">
+              <div className="w-8 h-1 bg-brand-orange-light mb-3"></div>
               <CardTitle className="text-2xl font-bold">Full Program</CardTitle>
               <p className="text-muted-foreground">Ideal for comprehensive transformation with complete support.</p>
               <div className="mt-4">
@@ -122,6 +128,7 @@ export function PricingSection() {
           {/* Nutrition Only */}
           <Card className="relative bg-card text-card-foreground border border-border hover:shadow-lg transition-shadow">
             <CardHeader className="pb-8">
+              <div className="w-8 h-1 bg-brand-orange-light mb-3"></div>
               <CardTitle className="text-2xl font-bold">Nutrition Coaching</CardTitle>
               <p className="text-muted-foreground">Focus on nutritional guidance and lifestyle coaching.</p>
               <div className="mt-4">

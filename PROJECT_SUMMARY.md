@@ -59,7 +59,7 @@ src/
 
 /* Theme Colors */
 --background: oklch(0 0 0);              /* Pure black in dark mode */
---foreground: oklch(0.985 0 0);          /* White text in dark mode */
+--foreground: oklch(0.394 0.98 200.4);          /* White text in dark mode */
 --card: oklch(0.21 0.006 285.885);       /* Dark gray cards */
 --muted: oklch(0.274 0.006 286.033);     /* Muted backgrounds */
 ```

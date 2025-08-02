@@ -5,9 +5,13 @@ export function WhySection() {
     <section id="why" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Why Choose Body By Bunch?
-          </h2>
+          <div className="space-y-2 mb-6">
+            <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Why Choose Body By Bunch?
+            </h2>
+            <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Every fitness journey is unique. Here's why clients choose our personalized approach 
             over generic programs and restrictive meal plans.
@@ -31,6 +35,7 @@ export function WhySection() {
               </div>
             </div>
             <div className="text-center md:text-left flex-1 max-w-lg">
+              <div className="w-8 h-1 bg-brand-orange-light mb-3 mx-auto md:mx-0"></div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 You Are Not Like Anyone Else
               </h3>

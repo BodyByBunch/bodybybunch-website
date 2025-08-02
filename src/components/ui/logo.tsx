@@ -90,14 +90,26 @@ export function Logo({
 export function HeaderLogo() {
   return (
     <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
-      <Image
-        src="/images/brand/logo.png"
-        alt="Body By Bunch"
-        width={200}
-        height={60}
-        priority
-        className="h-12 w-auto object-contain"
-      />
+      <div className="relative">
+        {/* Light mode logo */}
+        <Image
+          src="/images/brand/logo.png"
+          alt="Body By Bunch"
+          width={200}
+          height={60}
+          priority
+          className="h-12 w-auto object-contain block dark:hidden"
+        />
+        {/* Dark mode logo */}
+        <Image
+          src="/images/brand/logo-white.png"
+          alt="Body By Bunch"
+          width={200}
+          height={60}
+          priority
+          className="h-12 w-auto object-contain hidden dark:block"
+        />
+      </div>
     </Link>
   )
 }

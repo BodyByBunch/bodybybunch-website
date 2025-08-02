@@ -9,10 +9,6 @@ export default function AboutPage() {
         <AboutHero />
         <AboutStory />
         <TrainingGallery />
-        
-        {/* <AboutCredentials /> */}
-        
-        {/* <AboutPhilosophy /> */}
       </main>
     </div>
   );

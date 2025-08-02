@@ -6,6 +6,7 @@ export function CTASection() {
   return (
     <section className="py-20 bg-slate-900 text-white">
       <div className="container mx-auto px-4 text-center">
+        <div className="w-16 h-1 bg-brand-orange mx-auto mb-4"></div>
         <h2 className="text-4xl font-bold mb-6">
           Ready to Start Your Transformation?
         </h2>
@@ -19,7 +20,7 @@ export function CTASection() {
             Call (512) 818-4281
           </Button>
           <Link href="/contact">
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-slate-900">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white">
               Schedule Consultation
             </Button>
           </Link>

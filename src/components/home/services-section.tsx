@@ -57,7 +57,7 @@ export function ServicesSection() {
             </div>
           </Card>
 
-          <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 cursor-pointer h-[480px] p-0">
+          <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-brand-orange/20 transition-all duration-500 cursor-pointer h-[480px] p-0">
             {/* Image Area */}
             <div className="relative h-64 group-hover:h-44 transition-all duration-500 overflow-hidden bg-gray-200 dark:bg-gray-700">
               <Image
@@ -85,7 +85,7 @@ export function ServicesSection() {
                 {/* Hidden link that slides up on hover */}
                 <div className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 mt-4">
                   <Link href="/plans">
-                    <Button variant="outline" className="w-full border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white">
+                    <Button variant="outline" className="w-full border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white">
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -133,7 +133,7 @@ export function ServicesSection() {
             </div>
           </Card>
 
-          <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 cursor-pointer h-[480px] p-0">
+          <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-brand-orange/20 transition-all duration-500 cursor-pointer h-[480px] p-0">
             {/* Image Area */}
             <div className="relative h-64 group-hover:h-44 transition-all duration-500 overflow-hidden bg-gray-200 dark:bg-gray-700">
               <Image
@@ -161,7 +161,7 @@ export function ServicesSection() {
                 {/* Hidden link that slides up on hover */}
                 <div className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 mt-4">
                   <Link href="/plans">
-                    <Button variant="outline" className="w-full border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white">
+                    <Button variant="outline" className="w-full border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white">
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

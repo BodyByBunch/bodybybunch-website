@@ -24,11 +24,11 @@ export function TestimonialsSection() {
                 <CardTitle className="text-lg text-white">Sarah M.</CardTitle>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-orange-400 text-orange-400" />
+                    <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
                   ))}
                 </div>
               </div>
-              <Badge className="bg-orange-600 text-white hover:bg-orange-700">-45 lbs in 6 months</Badge>
+              <Badge className="bg-brand-orange text-white hover:bg-brand-orange/80">-45 lbs in 6 months</Badge>
             </CardHeader>
             <CardContent>
               <p className="text-gray-300 italic">
@@ -44,11 +44,11 @@ export function TestimonialsSection() {
                 <CardTitle className="text-lg text-white">Mike R.</CardTitle>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-orange-400 text-orange-400" />
+                    <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
                   ))}
                 </div>
               </div>
-              <Badge className="bg-orange-600 text-white hover:bg-orange-700">+20 lbs muscle</Badge>
+              <Badge className="bg-brand-orange text-white hover:bg-brand-orange/80">+20 lbs muscle</Badge>
             </CardHeader>
             <CardContent>
               <p className="text-gray-300 italic">
@@ -64,11 +64,11 @@ export function TestimonialsSection() {
                 <CardTitle className="text-lg text-white">Jennifer L.</CardTitle>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-orange-400 text-orange-400" />
+                    <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
                   ))}
                 </div>
               </div>
-              <Badge className="bg-orange-600 text-white hover:bg-orange-700">-30 lbs in 4 months</Badge>
+              <Badge className="bg-brand-orange text-white hover:bg-brand-orange/80">-30 lbs in 4 months</Badge>
             </CardHeader>
             <CardContent>
               <p className="text-gray-300 italic">

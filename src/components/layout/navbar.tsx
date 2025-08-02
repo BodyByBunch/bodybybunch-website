@@ -79,7 +79,7 @@ export function Navbar() {
                 variant="ghost"
                 size="sm"
                 asChild
-                className={`hover:bg-brand-sky/10 hover:text-brand-sky ${isActive ? "bg-brand-sky/10 text-brand-sky" : ""}`}
+                className={`hover:!bg-brand-sky/10 hover:!text-brand-sky focus:!bg-brand-sky/10 focus:!text-brand-sky ${isActive ? "bg-brand-sky/10 text-brand-sky" : ""}`}
               >
                 <Link 
                   href={item.href} 
@@ -146,7 +146,7 @@ export function Navbar() {
                   variant="ghost"
                   size="sm"
                   asChild
-                  className={`w-full justify-start hover:bg-brand-sky/10 hover:text-brand-sky ${isActive ? "bg-brand-sky/10 text-brand-sky" : ""}`}
+                  className={`w-full justify-start hover:!bg-brand-sky/10 hover:!text-brand-sky focus:!bg-brand-sky/10 focus:!text-brand-sky ${isActive ? "bg-brand-sky/10 text-brand-sky" : ""}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Link 
