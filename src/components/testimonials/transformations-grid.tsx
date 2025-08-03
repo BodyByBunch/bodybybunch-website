@@ -4,8 +4,24 @@ import { transformationItems } from '@/data/testimonials';
 import Masonry from '@/components/ui/Masonry';
 import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export function TransformationsGrid() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [showAllItems, setShowAllItems] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Limit items on mobile to prevent layout issues unless user requests all items
+  const displayItems = (isMobile && !showAllItems) ? transformationItems.slice(0, 12) : transformationItems;
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -26,18 +42,33 @@ export function TransformationsGrid() {
         </motion.div>
 
         {/* Masonry Grid */}
-        <div className="max-w-7xl mx-auto h-[800px] md:h-[1000px] lg:h-[1200px] xl:h-[1400px] relative mb-16">
-          <Masonry
-            items={transformationItems}
-            ease="power3.out"
-            duration={0.6}
-            stagger={0.05}
-            animateFrom="bottom"
-            scaleOnHover={true}
-            hoverScale={0.95}
-            blurToFocus={true}
-            colorShiftOnHover={false}
-          />
+        <div className="max-w-7xl mx-auto mb-16">
+          <div className={`${showAllItems ? 'max-h-none' : 'max-h-[600px] md:max-h-[800px] lg:max-h-none'} overflow-hidden`}>
+            <Masonry
+              items={displayItems}
+              ease="power3.out"
+              duration={0.6}
+              stagger={0.05}
+              animateFrom="bottom"
+              scaleOnHover={true}
+              hoverScale={0.95}
+              blurToFocus={true}
+              colorShiftOnHover={false}
+            />
+          </div>
+          {isMobile && !showAllItems && transformationItems.length > 12 && (
+            <div className="text-center mt-8">
+              <p className="text-muted-foreground mb-4">
+                Showing {displayItems.length} of {transformationItems.length} transformations
+              </p>
+              <button 
+                onClick={() => setShowAllItems(true)}
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-brand-sky hover:bg-brand-sky/90 text-white px-6 py-2"
+              >
+                View All Transformations
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Success Stats Section */}

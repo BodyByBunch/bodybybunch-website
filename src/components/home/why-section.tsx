@@ -5,19 +5,14 @@ import { CalendlyButton } from '@/components/ui/calendly-button';
 import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { Reveal } from '@/components/ui/reveal';
 
 export function WhySection() {
   return (
     <section id="why" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        {/* Section heading */}
+        <Reveal direction="down" distance={30} className="text-center mb-16">
           <div className="space-y-2 mb-6">
             <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -26,19 +21,18 @@ export function WhySection() {
             <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Every fitness journey is unique. Here's why clients choose our personalized approach 
-            over generic programs and restrictive meal plans.
+            Every fitness journey is unique. Here's why clients choose our
+            personalized approach over generic programs and restrictive meal
+            plans.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="max-w-6xl mx-auto space-y-16">
-          {/* Value Prop 1: Personalized Approach */}
-          <motion.div 
+          {/* Value Prop 1 */}
+          <Reveal
+            direction="left"
+            distance={30}
             className="flex flex-col md:flex-row items-center gap-12"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
           >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
@@ -49,7 +43,6 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
@@ -59,20 +52,21 @@ export function WhySection() {
                 You Are Not Like Anyone Else
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                This is the most important part: <strong className="text-brand-sky">you are unique</strong>. Your goals, lifestyle, 
-                challenges, and needs are nothing like anyone else's. That's why I work with YOU specifically, 
-                creating customized programs that fit your life, not forcing your life to fit a generic plan.
+                This is the most important part:{' '}
+                <strong className="text-brand-sky">you are unique</strong>. Your
+                goals, lifestyle, challenges, and needs are nothing like anyone
+                else's. That's why I work with YOU specifically, creating
+                customized programs that fit your life, not forcing your life to
+                fit a generic plan.
               </p>
             </div>
-          </motion.div>
+          </Reveal>
 
-          {/* Value Prop 2: Education Over Restriction */}
-          <motion.div 
+          {/* Value Prop 2 */}
+          <Reveal
+            direction="right"
+            distance={30}
             className="flex flex-col md:flex-row-reverse items-center gap-12"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
           >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
@@ -83,7 +77,6 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
@@ -92,20 +85,20 @@ export function WhySection() {
                 Education, Not Restriction
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Forget restrictive meal plans and unsustainable diets. As a certified nutrition coach, 
-                I educate you on how to live a <strong className="text-brand-sky">joyful, balanced lifestyle</strong>. You'll learn 
-                to make informed choices that fuel your body and support your goals long-term.
+                Forget restrictive meal plans and unsustainable diets. As a
+                certified nutrition coach, I educate you on how to live a{' '}
+                <strong className="text-brand-sky">joyful, balanced lifestyle</strong>
+                . You'll learn to make informed choices that fuel your body and
+                support your goals long-term.
               </p>
             </div>
-          </motion.div>
+          </Reveal>
 
-          {/* Value Prop 3: Always Available Support */}
-          <motion.div 
+          {/* Value Prop 3 */}
+          <Reveal
+            direction="left"
+            distance={30}
             className="flex flex-col md:flex-row items-center gap-12"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
           >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
@@ -116,7 +109,6 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
@@ -125,21 +117,21 @@ export function WhySection() {
                 Support When You Need It Most
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm available to all my clients at any time - not just during scheduled sessions. 
-                Whether you have questions, need motivation, or want to celebrate a win, 
-                <strong className="text-brand-sky">I'm here for you</strong>. This ongoing support makes all the difference 
-                in building lasting, healthy habits.
+                I'm available to all my clients at any time - not just during
+                scheduled sessions. Whether you have questions, need motivation,
+                or want to celebrate a win,{' '}
+                <strong className="text-brand-sky">I'm here for you</strong>.
+                This ongoing support makes all the difference in building
+                lasting, healthy habits.
               </p>
             </div>
-          </motion.div>
+          </Reveal>
 
-          {/* Value Prop 4: Proven Expertise */}
-          <motion.div 
+          {/* Value Prop 4 */}
+          <Reveal
+            direction="right"
+            distance={30}
             className="flex flex-col md:flex-row-reverse items-center gap-12"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
           >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
@@ -150,7 +142,6 @@ export function WhySection() {
                   height={256}
                   className="object-cover rounded-xl"
                 />
-                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
             </div>
@@ -159,22 +150,24 @@ export function WhySection() {
                 Certified Expertise You Can Trust
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With NASM certifications in both personal training and nutrition coaching, 
-                you're getting evidence-based guidance from someone who understands the science 
-                behind fitness and nutrition. <strong className="text-brand-sky">Your success is built on proven methods</strong>, 
-                not trendy fads.
+                With NASM certifications in both personal training and nutrition
+                coaching, you're getting evidence-based guidance from someone
+                who understands the science behind fitness and nutrition.{' '}
+                <strong className="text-brand-sky">
+                  Your success is built on proven methods
+                </strong>
+                , not trendy fads.
               </p>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
 
         {/* Call to Action */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <Reveal
+          direction="down"
+          distance={30}
           transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          className="text-center mt-16"
         >
           <p className="text-xl text-muted-foreground mb-6">
             Ready to experience a truly personalized approach to fitness?
@@ -189,8 +182,8 @@ export function WhySection() {
               Schedule Consultation
             </CalendlyButton>
             <Link href="#services">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="default"
                 className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white"
               >
@@ -198,8 +191,8 @@ export function WhySection() {
               </Button>
             </Link>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );
-} 
+}

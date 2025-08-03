@@ -1,5 +1,5 @@
 
-import { PricingSection } from '@/components/home';
+import { PricingSection } from '@/components/pricing/pricing-section';
 
 export default function PlansPage() {
   return (

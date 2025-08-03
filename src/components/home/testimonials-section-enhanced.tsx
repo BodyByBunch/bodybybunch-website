@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { TestimonialsSlider } from './testimonials-slider';
 import { testimonialsData } from '@/data';
 import { motion } from 'framer-motion';
+import { Reveal } from '@/components/ui/reveal';
 
 interface TestimonialsSectionEnhancedProps {
   layout?: 'cards' | 'circular' | 'rolling';
@@ -20,20 +21,14 @@ export function TestimonialsSectionEnhanced({
   return (
     <section id="testimonials" className="py-20 bg-slate-900">
       <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <Reveal direction="down" distance={30} className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
             Client Success Stories
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Real results from real people who have transformed their lives with Body By Bunch.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Render based on layout prop */}
         {layout === 'cards' && (
@@ -98,19 +93,13 @@ export function TestimonialsSectionEnhanced({
           </motion.div>
         )}
 
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
+        <Reveal direction="up" distance={30} className="text-center">
           <Link href="/testimonials">
             <Button variant="outline" size="lg" className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
               View All Success Stories
             </Button>
           </Link>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

@@ -4,9 +4,9 @@ import {
   WhySection,
   ServicesSection,
   TestimonialsSectionEnhanced,
-  PricingSection
 } from '@/components/home';
 import { CTASection } from '@/components/cta';
+import { PricingSection } from '@/components/pricing/pricing-section';
 
 export default function HomePage() {
   return (

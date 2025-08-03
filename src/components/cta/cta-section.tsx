@@ -5,17 +5,13 @@ import { CalendlyButton } from '@/components/ui/calendly-button';
 import { Phone, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Reveal } from '@/components/ui/reveal';
 
 export function CTASection() {
   return (
     <section className="py-20 bg-slate-900 text-white">
       <div className="container mx-auto px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <Reveal direction="down" distance={30}>
           <div className="w-16 h-1 bg-brand-orange mx-auto mb-4"></div>
           <h2 className="text-4xl font-bold mb-6">
             Ready to Start Your Transformation?
@@ -24,15 +20,9 @@ export function CTASection() {
             Join hundreds of clients who have transformed their lives with Body By Bunch. 
             Your success story could be next!
           </p>
-        </motion.div>
+        </Reveal>
         
-        <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
+        <Reveal direction="up" distance={30} className="flex flex-col sm:flex-row gap-4 justify-center items-center" >
           <CalendlyButton
             calendlyUrl="https://calendly.com/bodybybunch"
             size="default"
@@ -50,7 +40,7 @@ export function CTASection() {
             <Phone className="mr-2 h-5 w-5" />
             Book a Call
           </CalendlyButton>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

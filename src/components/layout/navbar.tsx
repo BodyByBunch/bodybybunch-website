@@ -24,6 +24,20 @@ export function Navbar() {
     setMounted(true);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (href: string, e: React.MouseEvent) => {
     // Handle hash links that need cross-page navigation
     if (href.startsWith('#')) {
@@ -112,6 +126,7 @@ export function Navbar() {
           <Button 
             variant="ghost" 
             size="icon"
+            className="hover:bg-brand-sky/10 hover:text-brand-sky hover:border-brand-sky/30"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -125,8 +140,9 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="container py-3 md:hidden border-t border-border bg-background">
-          <nav className="flex flex-col space-y-3">
+        <div className="absolute top-full left-0 right-0 md:hidden border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/95 shadow-lg">
+          <div className="container py-4">
+            <nav className="flex flex-col space-y-2">
             {navItems.map((item) => {
               const isHashLink = item.href.startsWith('#');
               
@@ -144,9 +160,9 @@ export function Navbar() {
                 <Button
                   key={item.href}
                   variant="ghost"
-                  size="sm"
+                  size="default"
                   asChild
-                  className={`w-full justify-start hover:!bg-brand-sky/10 hover:!text-brand-sky focus:!bg-brand-sky/10 focus:!text-brand-sky ${isActive ? "bg-brand-sky/10 text-brand-sky" : ""}`}
+                  className={`w-full justify-start h-12 text-base hover:!bg-brand-sky/10 hover:!text-brand-sky focus:!bg-brand-sky/10 focus:!text-brand-sky ${isActive ? "bg-brand-sky/10 text-brand-sky" : ""}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Link 
@@ -161,16 +177,9 @@ export function Navbar() {
                 </Button>
               );
             })}
-            <CalendlyButton
-              calendlyUrl="https://calendly.com/your-calendly-url"
-              variant="default"
-              className="w-full mt-2 bg-brand-sky hover:bg-primary text-white"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Calendar className="mr-2 h-4 w-4" />
-              Schedule Free Consultation
-            </CalendlyButton>
-          </nav>
+
+            </nav>
+          </div>
         </div>
       )}
     </header>

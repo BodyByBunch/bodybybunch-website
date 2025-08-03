@@ -236,7 +236,7 @@ import React, {
     };
   
     return (
-      <div ref={containerRef} className="relative w-full" style={{ height: containerHeight }}>
+      <div ref={containerRef} className="relative w-full max-w-full overflow-hidden" style={{ height: containerHeight }}>
         {grid.map((item) => (
           <div
             key={item.id}
