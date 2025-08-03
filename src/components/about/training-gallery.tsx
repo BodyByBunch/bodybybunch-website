@@ -1,6 +1,8 @@
 'use client';
 
 import Masonry from '@/components/ui/Masonry';
+import { CTASection } from '@/components/cta/cta-section';
+import { motion } from 'framer-motion';
 
 const trainingImages = [
   {
@@ -81,7 +83,13 @@ export function TrainingGallery() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl font-bold text-foreground mb-4">
             Transform Your Body, Transform Your Life
           </h2>
@@ -89,7 +97,7 @@ export function TrainingGallery() {
             See the results of our personalized training programs. Every client's journey is unique, 
             and every transformation is celebrated.
           </p>
-        </div>
+        </motion.div>
         
         <div className="max-w-7xl mx-auto">
           <Masonry
@@ -104,25 +112,10 @@ export function TrainingGallery() {
             colorShiftOnHover={false}
           />
         </div>
-        
-        <div className="text-center mt-16">
-          <p className="text-lg text-muted-foreground mb-6">
-            Ready to start your transformation journey?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#pricing" className="inline-block">
-              <button className="bg-brand-sky hover:bg-primary text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                View Programs
-              </button>
-            </a>
-            <a href="/contact" className="inline-block">
-              <button className="border-2 border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Get Started Today
-              </button>
-            </a>
-          </div>
-        </div>
       </div>
+      
+      {/* Use the CTA Section component */}
+      <CTASection />
     </section>
   );
 } 

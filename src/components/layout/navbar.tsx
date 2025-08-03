@@ -92,8 +92,8 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Right side items */}
-        <div className="hidden md:flex items-center space-x-4 mr-8">
+        {/* Right side items - moved to far right */}
+        <div className="hidden md:flex items-center space-x-4 ml-auto">
           <ModeToggle />
           <CalendlyButton
             calendlyUrl="https://calendly.com/your-calendly-url"
@@ -106,8 +106,8 @@ export function Navbar() {
           </CalendlyButton>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile Menu Button - moved to far right */}
+        <div className="flex items-center gap-2 md:hidden ml-auto">
           <ModeToggle />
           <Button 
             variant="ghost" 

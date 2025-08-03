@@ -2,26 +2,30 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { HeroSection2 } from './hero-section-2';
+import { HeroSection2 } from './hero-section-dark';
 import { HeroSectionLight } from './hero-section-light';
 
 export function HeroThemeAware() {
-  const { theme, systemTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Prevent hydration flash by rendering a invisible container until mounted
   if (!mounted) {
-    // Return light mode as default during SSR
-    return <HeroSectionLight />;
+    return (
+      <div className="opacity-0 pointer-events-none">
+        <HeroSectionLight />
+      </div>
+    );
   }
 
-  // Determine the actual theme
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-
-  // Use dark hero for dark theme, light hero for light theme
-  return currentTheme === 'dark' ? <HeroSection2 /> : <HeroSectionLight />;
+  // Once mounted, show the correct hero with smooth transition
+  return (
+    <div className="transition-opacity duration-200">
+      {resolvedTheme === 'dark' ? <HeroSection2 /> : <HeroSectionLight />}
+    </div>
+  );
 }

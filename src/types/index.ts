@@ -1,11 +1,5 @@
-// Common types used across the application
-export interface User {
-  id: string;
-  email: string;
-  name?: string;
-  organization_id?: string;
-  role?: string;
-}
+// Import User from auth types to avoid duplication
+import type { User } from './auth';
 
 export interface AuthState {
   user: User | null;
@@ -51,4 +45,6 @@ export interface NavItem {
 export type { RegisteredTo, PatientInfo } from './user';
 
 // Auth types
-export type { User, AuthSession, AuthContextType, WorkOSUser } from './auth'; 
+export type { AuthSession, AuthContextType, WorkOSUser } from './auth';
+// Re-export User type to maintain backward compatibility
+export type { User } from './auth'; 

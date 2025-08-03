@@ -1,10 +1,23 @@
+'use client';
+
 import Image from 'next/image';
+import { CalendlyButton } from '@/components/ui/calendly-button';
+import { Button } from '@/components/ui/button';
+import { Calendar } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export function WhySection() {
   return (
     <section id="why" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="space-y-2 mb-6">
             <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -16,11 +29,17 @@ export function WhySection() {
             Every fitness journey is unique. Here's why clients choose our personalized approach 
             over generic programs and restrictive meal plans.
           </p>
-        </div>
+        </motion.div>
 
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Value Prop 1: Personalized Approach */}
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <motion.div 
+            className="flex flex-col md:flex-row items-center gap-12"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -40,15 +59,21 @@ export function WhySection() {
                 You Are Not Like Anyone Else
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                This is the most important part: <strong>you are unique</strong>. Your goals, lifestyle, 
+                This is the most important part: <strong className="text-brand-sky">you are unique</strong>. Your goals, lifestyle, 
                 challenges, and needs are nothing like anyone else's. That's why I work with YOU specifically, 
                 creating customized programs that fit your life, not forcing your life to fit a generic plan.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Value Prop 2: Education Over Restriction */}
-          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+          <motion.div 
+            className="flex flex-col md:flex-row-reverse items-center gap-12"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -68,14 +93,20 @@ export function WhySection() {
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Forget restrictive meal plans and unsustainable diets. As a certified nutrition coach, 
-                I educate you on how to live a <strong>joyful, balanced lifestyle</strong>. You'll learn 
+                I educate you on how to live a <strong className="text-brand-sky">joyful, balanced lifestyle</strong>. You'll learn 
                 to make informed choices that fuel your body and support your goals long-term.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Value Prop 3: Always Available Support */}
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <motion.div 
+            className="flex flex-col md:flex-row items-center gap-12"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -96,14 +127,20 @@ export function WhySection() {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm available to all my clients at any time - not just during scheduled sessions. 
                 Whether you have questions, need motivation, or want to celebrate a win, 
-                <strong> I'm here for you</strong>. This ongoing support makes all the difference 
+                <strong className="text-brand-sky">I'm here for you</strong>. This ongoing support makes all the difference 
                 in building lasting, healthy habits.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Value Prop 4: Proven Expertise */}
-          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+          <motion.div 
+            className="flex flex-col md:flex-row-reverse items-center gap-12"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -124,33 +161,44 @@ export function WhySection() {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 With NASM certifications in both personal training and nutrition coaching, 
                 you're getting evidence-based guidance from someone who understands the science 
-                behind fitness and nutrition. <strong>Your success is built on proven methods</strong>, 
+                behind fitness and nutrition. <strong className="text-brand-sky">Your success is built on proven methods</strong>, 
                 not trendy fads.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <p className="text-xl text-muted-foreground mb-6">
             Ready to experience a truly personalized approach to fitness?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="tel:5128184281" 
-                              className="inline-flex items-center px-6 py-3 bg-brand-sky text-white font-semibold rounded-lg hover:bg-primary transition-colors"
+            <CalendlyButton
+              calendlyUrl="https://calendly.com/bodybybunch"
+              size="default"
+              className="bg-brand-sky text-white hover:bg-primary"
             >
-              Call (512) 818-4281
-            </a>
-            <a 
-              href="#services" 
-                              className="inline-flex items-center px-6 py-3 border border-brand-sky text-brand-sky font-semibold rounded-lg hover:bg-brand-sky hover:text-white transition-colors"
-            >
-              Learn More About Services
-            </a>
+              <Calendar className="mr-2 h-5 w-5" />
+              Schedule Consultation
+            </CalendlyButton>
+            <Link href="#services">
+              <Button 
+                variant="outline" 
+                size="default"
+                className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white"
+              >
+                Learn More About Services
+              </Button>
+            </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

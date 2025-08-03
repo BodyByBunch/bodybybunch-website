@@ -14,6 +14,7 @@ export function HeroSection2() {
           fill
           priority
           className="object-cover"
+          style={{ objectPosition: '80% center' }}
           sizes="100vw"
         />
         {/* Overlay for better text readability - very dark for light mode */}
@@ -51,7 +52,7 @@ export function HeroSection2() {
             {/* Call to Action */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <CalendlyButton
-                calendlyUrl="https://calendly.com/your-calendly-url"
+                calendlyUrl="https://calendly.com/bodybybunch"
                 size="lg"
                 className="text-lg px-8 py-4 bg-brand-sky hover:bg-primary border-0 shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{color: '#ffffff'}}
