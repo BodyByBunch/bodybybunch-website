@@ -7,8 +7,7 @@ import { Star } from 'lucide-react';
 import Link from 'next/link';
 import { TestimonialsSlider } from './testimonials-slider';
 import { testimonialsData } from '@/data';
-import { motion } from 'framer-motion';
-import { Reveal } from '@/components/ui/reveal';
+
 
 interface TestimonialsSectionEnhancedProps {
   layout?: 'cards' | 'circular' | 'rolling';
@@ -21,40 +20,20 @@ export function TestimonialsSectionEnhanced({
   return (
     <section id="testimonials" className="py-20 bg-slate-900">
       <div className="container mx-auto px-4">
-        <Reveal direction="down" distance={30} className="text-center mb-16">
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
             Client Success Stories
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Real results from real people who have transformed their lives with Body By Bunch.
           </p>
-        </Reveal>
+        </div>
 
         {/* Render based on layout prop */}
         {layout === 'cards' && (
-          <motion.div 
-            className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.2
-                }
-              }
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto mb-12">
             {testimonialsData.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-                }}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              >
+              <div key={testimonial.id}>
                 <Card className="bg-slate-700 border-slate-600 text-white h-full">
                   <CardHeader>
                     <div className="flex items-center justify-between">
@@ -73,33 +52,27 @@ export function TestimonialsSectionEnhanced({
                     <p className="text-gray-300 italic">"{testimonial.quote}"</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         )}
 
         {(layout === 'circular' || layout === 'rolling') && (
-          <motion.div 
-            className="mb-12"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="mb-12">
             <TestimonialsSlider 
               variant={layout} 
               testimonials={testimonialsData}
             />
-          </motion.div>
+          </div>
         )}
 
-        <Reveal direction="up" distance={30} className="text-center">
+        <div className="text-center">
           <Link href="/testimonials">
             <Button variant="outline" size="lg" className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white">
               View All Success Stories
             </Button>
           </Link>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

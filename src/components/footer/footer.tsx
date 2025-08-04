@@ -1,10 +1,7 @@
-import { Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { FooterLogo } from '@/components/ui/logo';
-import { CalendlyButton } from '@/components/ui/calendly-button';
+import { CalendlyButton, SocialIcons } from '@/components/ui';
 import Link from 'next/link';
-
-// Toggle flag for showing/hiding social links
-const SHOW_SOCIAL_LINKS = true;
 
 const serviceLinks = [
   { name: "Personal Training", href: "#pricing" },
@@ -27,10 +24,7 @@ const resourceLinks = [
   { name: "Contact", href: "/contact" },
 ]
 
-const socialLinks = [
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com/bodybybunch" },
-  { name: "Facebook", icon: Facebook, href: "https://facebook.com/lane.bunch.35" },
-]
+
 
 export function Footer() {
   return (
@@ -47,7 +41,7 @@ export function Footer() {
               <div>
                 <h3 className="text-2xl font-bold text-foreground">Body By Bunch</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  NASM Certified Personal Trainer & Nutrition Coach. 
+                  ISSA Certified Personal Trainer & PN1 Nutritionist. 
                   Transform your life with personalized fitness and nutrition coaching.
                 </p>
               </div>
@@ -65,22 +59,7 @@ export function Footer() {
               </div>
               
               {/* Social Links */}
-              {SHOW_SOCIAL_LINKS && (
-                <div className="flex justify-center sm:justify-start space-x-4">
-                  {socialLinks.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="text-muted-foreground hover:text-brand-orange transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="sr-only">{item.name}</span>
-                      <item.icon className="h-5 w-5" />
-                    </a>
-                  ))}
-                </div>
-              )}
+              <SocialIcons className="flex justify-center sm:justify-start space-x-4" />
             </div>
 
             {/* Services */}

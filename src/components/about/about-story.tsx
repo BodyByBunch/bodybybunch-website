@@ -1,14 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { Reveal } from '@/components/ui/reveal';
 
 export function AboutStory() {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section heading */}
-        <Reveal direction="down" distance={30} className="text-center mb-16">
+        <div className="text-center mb-16">
           <div className="space-y-2 mb-6">
             <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -20,26 +19,20 @@ export function AboutStory() {
             Discover the journey that led to BodybyBunch and my commitment to
             helping others achieve their fitness and nutrition goals.
           </p>
-        </Reveal>
+        </div>
 
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Story 1: Education & Foundation */}
-          <Reveal
-            direction="left"
-            distance={100}
-            className="flex flex-col md:flex-row items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-muted rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/about/about_img_1.jpeg"
+                  src="/images/training/IMG_0560.jpeg"
                   alt="Lane Bunch's education and fitness foundation journey"
                   width={256}
                   height={256}
                   className="object-cover rounded-xl"
                   loading="lazy"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-800/60 to-transparent rounded-xl"></div>
               </div>
@@ -58,18 +51,14 @@ export function AboutStory() {
                 BodybyBunch.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           {/* Story 2: Industry Experience */}
-          <Reveal
-            direction="right"
-            distance={100}
-            className="flex flex-col md:flex-row-reverse items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-muted rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/about/about_img_2.jpeg"
+                  src="/images/training/IMG_0565.jpeg"
                   alt="Fitness industry experience and roles"
                   width={256}
                   height={256}
@@ -91,18 +80,14 @@ export function AboutStory() {
                 shaped my comprehensive approach to fitness and nutrition.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           {/* Story 3: Philosophy & Approach */}
-          <Reveal
-            direction="left"
-            distance={100}
-            className="flex flex-col md:flex-row items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-muted rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/about/about_img_3.jpeg"
+                  src="/images/training/IMG_0577.jpeg"
                   alt="One percent better every day philosophy"
                   width={256}
                   height={256}
@@ -123,18 +108,14 @@ export function AboutStory() {
                 of your ability, the results will follow.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           {/* Story 4: Mission & Commitment */}
-          <Reveal
-            direction="right"
-            distance={100}
-            className="flex flex-col md:flex-row-reverse items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-muted rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
-                  src="/images/about/about_img_4.jpeg"
+                  src="/images/training/IMG_0483.jpeg"
                   alt="Trainer coach and biggest supporter mission"
                   width={256}
                   height={256}
@@ -154,7 +135,7 @@ export function AboutStory() {
                 supporter on your fitness journey.
               </p>
             </div>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

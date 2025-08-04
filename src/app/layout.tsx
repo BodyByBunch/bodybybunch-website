@@ -6,6 +6,7 @@ import '@/styles/globals.css';
 import { MainLayout } from '@/components/layout/main-layout';
 import { StructuredData } from '@/components/seo/structured-data';
 
+
 const inter = Inter({
   variable: '--font-sans',
   subsets: ['latin'],

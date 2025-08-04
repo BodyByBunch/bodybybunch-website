@@ -2,48 +2,23 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-slate-900">
       <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Fitness. Nutrition. Accountability.
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Learn how to live a joyful, balanced lifestyle with personalized coaching from Lane Bunch.
           </p>
-        </motion.div>
+        </div>
 
         {/* Services Grid - Single column on mobile, 2x2 on larger screens */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.2
-              }
-            }
-          }}
-        >
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, x: -30 },
-              visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-          >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          <div>
             <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 cursor-pointer min-h-[400px] md:h-[480px] p-0">
               {/* Image Area */}
               <div className="relative h-48 md:h-64 transition-all duration-300 overflow-hidden bg-gray-200 dark:bg-gray-700">
@@ -71,14 +46,9 @@ export function ServicesSection() {
                 </CardContent>
               </div>
             </Card>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, x: 30 },
-              visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-          >
+          <div>
             <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-brand-orange/20 transition-all duration-500 cursor-pointer min-h-[400px] md:h-[480px] p-0">
               {/* Image Area */}
               <div className="relative h-48 md:h-64 transition-all duration-300 overflow-hidden bg-gray-200 dark:bg-gray-700">
@@ -106,14 +76,9 @@ export function ServicesSection() {
                 </CardContent>
               </div>
             </Card>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, x: -30 },
-              visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-          >
+          <div>
             <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 cursor-pointer min-h-[400px] md:h-[480px] p-0">
               {/* Image Area */}
               <div className="relative h-48 md:h-64 transition-all duration-300 overflow-hidden bg-gray-200 dark:bg-gray-700">
@@ -141,14 +106,9 @@ export function ServicesSection() {
                 </CardContent>
               </div>
             </Card>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, x: 30 },
-              visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-          >
+          <div>
             <Card className="group relative overflow-hidden bg-slate-800 text-white border-slate-700 hover:shadow-2xl hover:shadow-brand-orange/20 transition-all duration-500 cursor-pointer min-h-[400px] md:h-[480px] p-0">
               {/* Image Area */}
               <div className="relative h-48 md:h-64 transition-all duration-300 overflow-hidden bg-gray-200 dark:bg-gray-700">
@@ -176,9 +136,9 @@ export function ServicesSection() {
                 </CardContent>
               </div>
             </Card>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
-} 
+}

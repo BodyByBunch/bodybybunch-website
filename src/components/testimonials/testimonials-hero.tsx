@@ -5,18 +5,12 @@ import { Badge } from '@/components/ui/badge';
 import { Star, Quote } from 'lucide-react';
 import Image from 'next/image';
 import { featuredTestimonials } from '@/data/testimonials';
-import { motion } from 'framer-motion';
 
 export function TestimonialsHero() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Client Success Stories
           </h1>
@@ -24,32 +18,12 @@ export function TestimonialsHero() {
             Real transformations from real people. Discover how Body By Bunch has helped clients 
             achieve their fitness goals and build lasting healthy habits.
           </p>
-        </motion.div>
+        </div>
 
         {/* Featured Testimonials - Row Layout */}
-        <motion.div 
-          className="max-w-5xl mx-auto space-y-8 mb-12"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.3
-              }
-            }
-          }}
-        >
+        <div className="max-w-5xl mx-auto space-y-8 mb-12">
           {featuredTestimonials.slice(0, 6).map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
+            <div key={testimonial.id}>
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-0">
                   
@@ -66,16 +40,11 @@ export function TestimonialsHero() {
                       
                       
                       {/* Achievement badge on image */}
-                      <motion.div 
-                        className="absolute bottom-4 left-4"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.5 + index * 0.3 }}
-                      >
+                      <div className="absolute bottom-4 left-4">
                         <Badge className="bg-brand-sky text-white text-sm px-3 py-1">
                           {testimonial.achievement}
                         </Badge>
-                      </motion.div>
+                      </div>
                     </div>
 
                     {/* Content */}
@@ -128,9 +97,9 @@ export function TestimonialsHero() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
     </section>

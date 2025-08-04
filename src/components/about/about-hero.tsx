@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { CalendlyButton } from '@/components/ui/calendly-button';
 import { Phone, Calendar } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 export function AboutHero() {
   return (
@@ -15,17 +14,8 @@ export function AboutHero() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Image - Order 1 on mobile (top), Order 2 on desktop (right) */}
-            <motion.div 
-              className="relative order-1 lg:order-2 w-full"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <motion.div 
-                className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
+            <div className="relative order-1 lg:order-2 w-full">
+              <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/about/about_img.jpeg"
                   alt="Lane Bunch - NASM Certified Personal Trainer and Nutrition Coach"
@@ -36,35 +26,19 @@ export function AboutHero() {
                 />
                 {/* Gradient overlay for better text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-800/20 to-transparent"></div>
-              </motion.div>
+              </div>
               
               {/* Credentials badge */}
-              <motion.div 
-                className="absolute -bottom-4 -left-4 bg-brand-sky text-white px-6 py-3 rounded-lg shadow-lg"
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-sm font-semibold">NASM Certified</div>
-                <div className="text-xs opacity-90">Personal Trainer & Nutrition Coach</div>
+              <div className="absolute -bottom-4 -left-4 bg-brand-sky text-white px-6 py-3 rounded-lg shadow-lg">
+                <div className="text-sm font-semibold">ISSA Certified</div>
+                <div className="text-xs opacity-90">Personal Trainer & PN1 Nutritionist</div>
                 <div className="text-xs opacity-90 mt-1">Weight Loss Specialist</div>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* Content - Order 2 on mobile (below image), Order 1 on desktop (left) */}
-            <motion.div 
-              className="space-y-6 order-2 lg:order-1 text-center lg:text-left"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div 
-                className="space-y-4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
+            <div className="space-y-6 order-2 lg:order-1 text-center lg:text-left">
+              <div className="space-y-4">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                   Meet Lane Bunch
                 </h1>
@@ -72,14 +46,9 @@ export function AboutHero() {
                   My passion revolves around people. I strive every day to help others become the best version of themselves. 
                   Fitness and nutrition aren't just a hobby for me. <strong className="text-brand-sky">It is me. It's who I am.</strong>
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                className="space-y-4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
+              <div className="space-y-4">
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Hey there! My name is Lane Bunch and I am the founder and owner of BodybyBunch. BodybyBunch is a personal 
                   training fitness company that offers in-person and online coaching. I train in-person clients at my 
@@ -91,15 +60,10 @@ export function AboutHero() {
                   trainer and coach for my clients. As long as you are communicating with me and being consistent and 
                   compliant to the program we design to the best of your ability, the results will follow.
                 </p>
-              </motion.div>
+              </div>
 
               {/* CTA Buttons */}
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
                 <CalendlyButton
                   calendlyUrl="https://calendly.com/bodybybunch"
                   size="lg"
@@ -117,8 +81,8 @@ export function AboutHero() {
                   <Phone className="mr-2 h-5 w-5" />
                   Book a Call
                 </CalendlyButton>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

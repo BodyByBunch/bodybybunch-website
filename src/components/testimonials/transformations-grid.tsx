@@ -3,7 +3,6 @@
 import { transformationItems } from '@/data/testimonials';
 import Masonry from '@/components/ui/Masonry';
 import { Star } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 export function TransformationsGrid() {
@@ -25,13 +24,7 @@ export function TransformationsGrid() {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
             Client Transformations
           </h2>
@@ -39,7 +32,7 @@ export function TransformationsGrid() {
             See the incredible results our clients have achieved through personalized training, 
             nutrition coaching, and consistent accountability.
           </p>
-        </motion.div>
+        </div>
 
         {/* Masonry Grid */}
         <div className="max-w-7xl mx-auto mb-16">
@@ -72,62 +65,28 @@ export function TransformationsGrid() {
         </div>
 
         {/* Success Stats Section */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center">
           <h3 className="text-3xl font-bold text-foreground mb-8">
             Proven Results That Speak for Themselves
           </h3>
-          <motion.div 
-            className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.2
-                }
-              }
-            }}
-          >
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-              }}
-            >
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div>
               <div className="text-3xl font-bold text-brand-sky mb-2">500+</div>
               <p className="text-lg font-semibold text-foreground">Successful Transformations</p>
-            </motion.div>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-              }}
-            >
+            </div>
+            <div>
               <div className="flex items-center justify-center gap-1 mb-2">
                 <div className="text-3xl font-bold text-brand-orange">5</div>
                 <Star className="h-6 w-6 fill-brand-orange text-brand-orange" />
               </div>
               <p className="text-lg font-semibold text-foreground">Average Client Rating</p>
-            </motion.div>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-              }}
-            >
+            </div>
+            <div>
               <div className="text-3xl font-bold text-brand-orange-light mb-2">95%</div>
               <p className="text-lg font-semibold text-foreground">Client Success Rate</p>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

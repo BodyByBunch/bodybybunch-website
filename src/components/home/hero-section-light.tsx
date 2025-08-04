@@ -2,10 +2,9 @@
 
 import { Button } from '@/components/ui/button';
 import { CalendlyButton } from '@/components/ui/calendly-button';
-import { Reveal } from '@/components/ui/reveal';
 import { Award, MapPin, Target, Heart, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { HeroImageCarousel } from './hero-image-carousel';
+
 
 export function HeroSectionLight() {
   return (
@@ -14,11 +13,11 @@ export function HeroSectionLight() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content - Left Side */}
-          <Reveal direction="left" distance={60} className="space-y-6 lg:space-y-8 text-center lg:text-left">
+          <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             {/* Tagline */}
             <div className="space-y-2">
               <p className="font-semibold tracking-wide uppercase text-sm text-brand-orange">
-                NASM Certified Personal Trainer & Nutrition Coach
+                ISSA Certified Personal Trainer & PN1 Nutritionist
               </p>
               <div className="w-16 h-1 shadow-lg bg-brand-orange mx-auto lg:mx-0"></div>
             </div>
@@ -54,76 +53,59 @@ export function HeroSectionLight() {
                 </a>
               </Button>
             </div>
-          </Reveal>
 
-          {/* Image - Right Side */}
-          <Reveal direction="right" distance={60} className="relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              src="/images/hero/sliderbg-2-bodybybunch.jpg"
-              alt="Lane Bunch Personal Training"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            {/* Subtle overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-
-            {/* Floating Stats Cards - Hidden on mobile, visible on lg+ */}
-            <motion.div 
-              className="hidden lg:block absolute top-4 right-4 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-border"
-              initial={{ opacity: 0, scale: 0.8, y: -20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center border border-border">
-                  <Target className="h-6 w-6 text-foreground" />
+            {/* Stats Badges - Elegant vertical stack */}
+            <div className="hidden lg:block mt-8">
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-8 h-8 bg-brand-sky/10 rounded-lg flex items-center justify-center group-hover:bg-brand-sky/20 transition-colors">
+                    <Target className="h-4 w-4 text-brand-sky" />
+                  </div>
+                  <div>
+                    <span className="text-lg font-bold text-foreground">100+</span>
+                    <span className="text-sm text-muted-foreground ml-2">Clients Transformed</span>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-2xl font-bold text-foreground">500+</p>
-                  <p className="text-sm text-muted-foreground">Clients Transformed</p>
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-8 h-8 bg-brand-orange/10 rounded-lg flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors">
+                    <MapPin className="h-4 w-4 text-brand-orange" />
+                  </div>
+                  <div>
+                    <span className="text-lg font-bold text-foreground">San Antonio, TX</span>
+                    <span className="text-sm text-muted-foreground ml-2">Local & Online</span>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 group">
+                  <div className="w-8 h-8 bg-brand-sky/10 rounded-lg flex items-center justify-center group-hover:bg-brand-sky/20 transition-colors">
+                    <Heart className="h-4 w-4 text-brand-sky" />
+                  </div>
+                  <div>
+                    <span className="text-lg font-bold text-foreground">5+ Years</span>
+                    <span className="text-sm text-muted-foreground ml-2">Experience</span>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
+          </div>
 
-            <motion.div 
-              className="hidden lg:block absolute bottom-4 left-4 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-border"
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center border border-border">
-                  <MapPin className="h-6 w-6 text-foreground" />
-                </div>
-                <div>
-                  <p className="text-xl font-bold text-foreground">San Antonio, TX</p>
-                  <p className="text-sm text-muted-foreground">Local & Online</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="hidden lg:block absolute top-1/2 left-4 transform -translate-y-1/2 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-border"
-              initial={{ opacity: 0, scale: 0.8, x: -20 }}
-              whileInView={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-background rounded-lg flex items-center justify-center border border-border">
-                  <Heart className="h-4 w-4 text-foreground" />
-                </div>
-                <div>
-                  <p className="text-lg font-bold text-foreground">5+ Years</p>
-                  <p className="text-xs text-muted-foreground">Experience</p>
-                </div>
-              </div>
-            </motion.div>
-          </Reveal>
+          {/* Image Carousel - Right Side */}
+          <div className="relative">
+            <div className="max-w-4xl mx-auto">
+              <HeroImageCarousel 
+                images={[
+                  '/images/hero/sliderbg-2-bodybybunch.jpg',
+                  '/images/training/IMG_0572.jpeg',
+                  '/images/training/IMG_0561.jpeg',
+                  '/images/training/IMG_0565.jpeg',
+                  '/images/training/IMG_0570.jpeg',
+                  '/images/training/IMG_0575.jpeg',
+                  '/images/training/IMG_0577.jpeg'
+                ]}
+                showBadges={false}
+                className="relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Mobile Stats - Positioned below image on mobile */}
@@ -132,7 +114,7 @@ export function HeroSectionLight() {
             <div className="flex items-center space-x-2">
               <Target className="h-4 w-4 text-brand-sky" />
               <div>
-                <p className="text-sm font-bold text-foreground">500+</p>
+                <p className="text-sm font-bold text-foreground">100+</p>
                 <p className="text-xs text-muted-foreground">Clients</p>
               </div>
             </div>

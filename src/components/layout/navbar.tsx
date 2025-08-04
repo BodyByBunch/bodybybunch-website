@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { HeaderLogo } from "@/components/ui/logo"
 import { BrandName } from "@/components/ui/brand-name"
 import { Button } from "@/components/ui/button"
-import { CalendlyButton } from "@/components/ui/calendly-button"
+import { CalendlyButton, SocialIcons } from "@/components/ui"
 import { ModeToggle } from "@/components/mode-toggle";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { ScrollLink } from "@/components/ui/scroll-link";
@@ -108,6 +108,7 @@ export function Navbar() {
 
         {/* Right side items - moved to far right */}
         <div className="hidden md:flex items-center space-x-4 ml-auto">
+          <SocialIcons className="flex space-x-3" iconClassName="h-4 w-4" />
           <ModeToggle />
           <CalendlyButton
             calendlyUrl="https://calendly.com/your-calendly-url"
@@ -122,6 +123,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button - moved to far right */}
         <div className="flex items-center gap-2 md:hidden ml-auto">
+          <SocialIcons className="flex space-x-2" iconClassName="h-4 w-4" />
           <ModeToggle />
           <Button 
             variant="ghost" 

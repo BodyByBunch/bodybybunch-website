@@ -1,4 +1,5 @@
 export { Button } from './button';
+export { CalendlyButton } from './calendly-button';
 export { Input } from './input';
 export { Label } from './label';
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card';
@@ -8,3 +9,4 @@ export { Progress } from './progress';
 export { RadioGroup, RadioGroupItem } from './radio-group';
 export { Separator } from './separator'; 
 export { ScrollLink } from './scroll-link';
+export { SocialIcons } from './social-icons';

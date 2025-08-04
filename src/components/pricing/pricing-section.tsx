@@ -3,16 +3,52 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CalendlyButton } from '@/components/ui/calendly-button';
 import { Badge } from '@/components/ui/badge';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Check, X, Phone, Calendar } from 'lucide-react';
-import { Reveal } from '@/components/ui/reveal';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+
+type PricingPeriod = '1year' | '6months' | '3months';
+
+interface PricingData {
+  [key: string]: {
+    [period in PricingPeriod]: number;
+  };
+}
+
+const pricingData: PricingData = {
+  nutrition: {
+    '1year': 50,
+    '6months': 75,
+    '3months': 100,
+  },
+  workout: {
+    '1year': 50,
+    '6months': 75,
+    '3months': 100,
+  },
+  full: {
+    '1year': 125,
+    '6months': 150,
+    '3months': 175,
+  },
+};
 
 export function PricingSection() {
+  const [selectedPeriod, setSelectedPeriod] = useState<PricingPeriod>('6months');
+
+  const getPeriodLabel = (period: PricingPeriod) => {
+    switch (period) {
+      case '1year': return '1 Year';
+      case '6months': return '6 Months';
+      case '3months': return '3 Months';
+    }
+  };
+
   return (
     <section id="pricing" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section heading */}
-        <Reveal direction="down" distance={30} className="text-center mb-16">
+        <div className="text-center mb-16">
           <div className="space-y-2 mb-6">
             <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -23,34 +59,59 @@ export function PricingSection() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Choose the program that best fits your fitness journey. Each plan is customized to your needs.
           </p>
-        </Reveal>
+        </div>
+
+        {/* Pricing Period Selector */}
+        <div className="text-center mb-12">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-foreground">Select Your Commitment Period</h3>
+            <RadioGroup
+              value={selectedPeriod}
+              onValueChange={(value) => setSelectedPeriod(value as PricingPeriod)}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="1year" id="1year" />
+                <label htmlFor="1year" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  1 Year
+                </label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="6months" id="6months" />
+                <label htmlFor="6months" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  6 Months
+                </label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="3months" id="3months" />
+                <label htmlFor="3months" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  3 Months
+                </label>
+              </div>
+            </RadioGroup>
+          </div>
+        </div>
 
         {/* Pricing Cards */}
-        <Reveal direction="up" distance={30}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-8 max-w-7xl mx-auto pt-6 px-6 md:px-12 lg:px-20">
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             
-            {/* Personal Training Plan */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            {/* Workout Coaching Only */}
+            <div>
               <Card className="relative bg-card text-card-foreground border border-border hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-8">
                   <div className="w-8 h-1 bg-brand-orange-light mb-3"></div>
-                  <CardTitle className="text-xl lg:text-2xl font-bold">Personal Training</CardTitle>
+                  <CardTitle className="text-xl lg:text-2xl font-bold">Workout Coaching Only</CardTitle>
                   <p className="text-sm lg:text-base text-muted-foreground">Perfect for individuals looking to start their fitness journey.</p>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold">Custom</span>
-                    <span className="text-muted-foreground">/session</span>
+                    <span className="text-4xl font-bold">${pricingData.workout[selectedPeriod]}</span>
+                    <span className="text-muted-foreground">/month</span>
                   </div>
+                  <p className="text-sm text-muted-foreground">for {getPeriodLabel(selectedPeriod)}</p>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {/* Features */}
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-brand-sky flex-shrink-0" />
-                      <span className="text-sm sm:text-base">1-on-1 Personal Training Sessions</span>
-                    </div>
                     <div className="flex items-center gap-3">
                       <Check className="h-5 w-5 text-brand-sky flex-shrink-0" />
                       <span className="text-sm sm:text-base">Form Corrections & Cues</span>
@@ -82,14 +143,10 @@ export function PricingSection() {
                   </CalendlyButton>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
 
             {/* Full Program (Featured) */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="pt-8 pb-6"
-            >
+            <div className="pt-8 pb-6">
               <div className="relative">
                 <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white px-4 py-1 z-20">
                   Most Popular
@@ -100,9 +157,10 @@ export function PricingSection() {
                     <CardTitle className="text-2xl font-bold">Full Program</CardTitle>
                     <p className="text-muted-foreground">Ideal for comprehensive transformation with complete support.</p>
                     <div className="mt-4">
-                      <span className="text-4xl font-bold">Custom</span>
+                      <span className="text-4xl font-bold">${pricingData.full[selectedPeriod]}</span>
                       <span className="text-muted-foreground">/month</span>
                     </div>
+                    <p className="text-sm text-muted-foreground">for {getPeriodLabel(selectedPeriod)}</p>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     {/* Features */}
@@ -147,22 +205,20 @@ export function PricingSection() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Nutrition Only */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            {/* Nutrition Coaching Only */}
+            <div>
               <Card className="relative bg-card text-card-foreground border border-border hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-8">
                   <div className="w-8 h-1 bg-brand-orange-light mb-3"></div>
-                  <CardTitle className="text-2xl font-bold">Nutrition Coaching</CardTitle>
+                  <CardTitle className="text-2xl font-bold">Nutrition Coaching Only</CardTitle>
                   <p className="text-muted-foreground">Focus on nutritional guidance and lifestyle coaching.</p>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold">Custom</span>
+                    <span className="text-4xl font-bold">${pricingData.nutrition[selectedPeriod]}</span>
                     <span className="text-muted-foreground">/month</span>
                   </div>
+                  <p className="text-sm text-muted-foreground">for {getPeriodLabel(selectedPeriod)}</p>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {/* Features */}
@@ -202,12 +258,12 @@ export function PricingSection() {
                   </CalendlyButton>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           </div>
-        </Reveal>
+        </div>
 
         {/* Additional Info */}
-        <Reveal direction="up" distance={30} className="text-center mt-16 space-y-4">
+        <div className="text-center mt-16 space-y-4">
           <p className="text-lg text-muted-foreground">
             Not sure which plan is right for you?
           </p>
@@ -233,7 +289,7 @@ export function PricingSection() {
           <p className="text-sm text-muted-foreground mt-4">
             All plans are customized to your specific needs and goals.
           </p>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

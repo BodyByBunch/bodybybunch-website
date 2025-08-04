@@ -5,14 +5,13 @@ import { CalendlyButton } from '@/components/ui/calendly-button';
 import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
 import Link from 'next/link';
-import { Reveal } from '@/components/ui/reveal';
 
 export function WhySection() {
   return (
     <section id="why" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section heading */}
-        <Reveal direction="down" distance={30} className="text-center mb-16">
+        <div className="text-center mb-16">
           <div className="space-y-2 mb-6">
             <div className="w-16 h-1 bg-brand-orange mx-auto"></div>
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -25,15 +24,11 @@ export function WhySection() {
             personalized approach over generic programs and restrictive meal
             plans.
           </p>
-        </Reveal>
+        </div>
 
-        <div className="max-w-6xl mx-auto space-y-16">
+        <div className="max-w-5xl mx-auto space-y-16">
           {/* Value Prop 1 */}
-          <Reveal
-            direction="left"
-            distance={30}
-            className="flex flex-col md:flex-row items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -60,14 +55,10 @@ export function WhySection() {
                 fit a generic plan.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           {/* Value Prop 2 */}
-          <Reveal
-            direction="right"
-            distance={30}
-            className="flex flex-col md:flex-row-reverse items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -92,14 +83,10 @@ export function WhySection() {
                 support your goals long-term.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           {/* Value Prop 3 */}
-          <Reveal
-            direction="left"
-            distance={30}
-            className="flex flex-col md:flex-row items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -125,14 +112,10 @@ export function WhySection() {
                 lasting, healthy habits.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           {/* Value Prop 4 */}
-          <Reveal
-            direction="right"
-            distance={30}
-            className="flex flex-col md:flex-row-reverse items-center gap-12"
-          >
+          <div className="flex flex-col md:flex-row-reverse items-center gap-12">
             <div className="flex-shrink-0">
               <div className="w-64 h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <Image
@@ -150,8 +133,8 @@ export function WhySection() {
                 Certified Expertise You Can Trust
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With NASM certifications in both personal training and nutrition
-                coaching, you're getting evidence-based guidance from someone
+                With ISSA certification in personal training and PN1 nutritionist
+                credentials, you're getting evidence-based guidance from someone
                 who understands the science behind fitness and nutrition.{' '}
                 <strong className="text-brand-sky">
                   Your success is built on proven methods
@@ -159,16 +142,11 @@ export function WhySection() {
                 , not trendy fads.
               </p>
             </div>
-          </Reveal>
+          </div>
         </div>
 
         {/* Call to Action */}
-        <Reveal
-          direction="down"
-          distance={30}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mt-16"
-        >
+        <div className="text-center mt-16">
           <p className="text-xl text-muted-foreground mb-6">
             Ready to experience a truly personalized approach to fitness?
           </p>
@@ -191,7 +169,7 @@ export function WhySection() {
               </Button>
             </Link>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
