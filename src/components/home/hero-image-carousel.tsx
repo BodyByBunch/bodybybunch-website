@@ -22,17 +22,6 @@ export function HeroImageCarousel({
   // State for current image index
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  // If no images, show a placeholder
-  if (!images || images.length === 0) {
-    return (
-      <div className={className}>
-        <div className="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-          <p className="text-muted-foreground">No images available</p>
-        </div>
-      </div>
-    );
-  }
-
   // Navigation functions
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => 
@@ -46,14 +35,27 @@ export function HeroImageCarousel({
     );
   };
 
-  // Auto-advance carousel
+  // Auto-advance carousel - moved before early return
   React.useEffect(() => {
+    if (!images || images.length === 0) return;
+    
     const interval = setInterval(() => {
       goToNext();
     }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images, goToNext]);
+
+  // If no images, show a placeholder
+  if (!images || images.length === 0) {
+    return (
+      <div className={className}>
+        <div className="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+          <p className="text-muted-foreground">No images available</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={className}>
@@ -77,8 +79,6 @@ export function HeroImageCarousel({
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20" />
       </div>
-
-
 
       {/* Image Indicators */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
