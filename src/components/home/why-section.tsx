@@ -152,7 +152,7 @@ export function WhySection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyButton
-              calendlyUrl="https://calendly.com/bodybybunch"
+              calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
               size="default"
               className="bg-brand-sky text-white hover:bg-primary"
             >

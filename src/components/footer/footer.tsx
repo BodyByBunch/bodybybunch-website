@@ -101,7 +101,7 @@ export function Footer() {
               <h3 className="text-sm font-semibold text-foreground">Get Started</h3>
               <div className="mt-6 space-y-4">
                 <CalendlyButton
-                  calendlyUrl="https://calendly.com/bodybybunch"
+                  calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
                   variant="default"
                   className="w-full bg-brand-sky hover:bg-brand-sky/90 text-white dark:text-white"
                 >

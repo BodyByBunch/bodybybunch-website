@@ -22,7 +22,7 @@ export function CTASection() {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <CalendlyButton
-            calendlyUrl="https://calendly.com/bodybybunch"
+            calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
             size="default"
             className="px-8 py-4 bg-brand-sky text-white hover:bg-primary border-0"
           >
@@ -30,7 +30,7 @@ export function CTASection() {
             Schedule Free Consultation
           </CalendlyButton>
           <CalendlyButton
-            calendlyUrl="https://calendly.com/bodybybunch"
+            calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
             variant="outline"
             size="default"
             className="px-8 py-4 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white"

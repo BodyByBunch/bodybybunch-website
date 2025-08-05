@@ -65,7 +65,7 @@ export function AboutHero() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
                 <CalendlyButton
-                  calendlyUrl="https://calendly.com/bodybybunch"
+                  calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
                   size="lg"
                   className="bg-brand-sky hover:bg-primary text-white"
                 >
@@ -73,7 +73,7 @@ export function AboutHero() {
                   Schedule Free Consultation
                 </CalendlyButton>
                 <CalendlyButton
-                  calendlyUrl="https://calendly.com/bodybybunch"
+                  calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                   variant="outline"
                   size="lg"
                   className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white"

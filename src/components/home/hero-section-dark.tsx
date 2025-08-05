@@ -40,7 +40,7 @@ export function HeroSection2() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <CalendlyButton
-                calendlyUrl="https://calendly.com/bodybybunch"
+                calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
                 size="lg"
                 className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg hover:shadow-xl transition-all duration-300 bg-brand-sky text-white"
               >
@@ -94,12 +94,12 @@ export function HeroSection2() {
               <HeroImageCarousel 
                 images={[
                   '/images/hero/sliderbg-2-bodybybunch.jpg',
-                  '/images/training/IMG_0572.jpeg',
                   '/images/training/IMG_0561.jpeg',
-                  '/images/training/IMG_0565.jpeg',
+                  '/images/training/IMG_0577.jpeg',
                   '/images/training/IMG_0570.jpeg',
-                  '/images/training/IMG_0575.jpeg',
-                  '/images/training/IMG_0577.jpeg'
+                  '/images/training/IMG_0572.jpeg',
+                  '/images/training/IMG_0565.jpeg',
+                  '/images/training/IMG_0575.jpeg'
                 ]}
                 showBadges={false}
                 className="relative w-full h-[500px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl"

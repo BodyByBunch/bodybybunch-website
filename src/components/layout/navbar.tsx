@@ -111,7 +111,7 @@ export function Navbar() {
           <SocialIcons className="flex space-x-3" iconClassName="h-4 w-4" />
           <ModeToggle />
           <CalendlyButton
-            calendlyUrl="https://calendly.com/your-calendly-url"
+            calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
             variant="default"
             size="sm"
             className="bg-brand-sky hover:bg-primary text-white"

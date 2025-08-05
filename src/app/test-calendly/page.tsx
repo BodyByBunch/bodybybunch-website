@@ -14,7 +14,7 @@ export default function TestCalendlyPage() {
             <h2 className="text-2xl font-semibold mb-4">Different Button Variants</h2>
             <div className="flex flex-wrap gap-4">
               <CalendlyButton
-                calendlyUrl="https://calendly.com/your-calendly-url"
+                calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
                 variant="default"
                 size="lg"
               >
@@ -23,7 +23,7 @@ export default function TestCalendlyPage() {
               </CalendlyButton>
 
               <CalendlyButton
-                calendlyUrl="https://calendly.com/your-calendly-url"
+                calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                 variant="outline"
                 size="lg"
               >
@@ -32,14 +32,14 @@ export default function TestCalendlyPage() {
               </CalendlyButton>
 
               <CalendlyButton
-                calendlyUrl="https://calendly.com/your-calendly-url"
+                calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
                 variant="secondary"
               >
                 Schedule Demo (Secondary)
               </CalendlyButton>
 
               <CalendlyButton
-                calendlyUrl="https://calendly.com/your-calendly-url"
+                calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
                 variant="ghost"
                 size="sm"
               >
@@ -51,7 +51,7 @@ export default function TestCalendlyPage() {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Custom Styled Example</h2>
             <CalendlyButton
-              calendlyUrl="https://calendly.com/your-calendly-url"
+              calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
               variant="default"
               className="w-full bg-brand-sky hover:bg-primary text-white"
               size="lg"

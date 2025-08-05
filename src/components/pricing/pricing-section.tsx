@@ -136,7 +136,7 @@ export function PricingSection() {
 
                   {/* CTA Button */}
                   <CalendlyButton
-                    calendlyUrl="https://calendly.com/bodybybunch"
+                    calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                     className="w-full mt-6 bg-muted-foreground hover:bg-foreground text-background"
                   >
                     Schedule A Call
@@ -197,7 +197,7 @@ export function PricingSection() {
 
                     {/* CTA Button */}
                     <CalendlyButton
-                      calendlyUrl="https://calendly.com/bodybybunch"
+                      calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                       className="w-full mt-6 bg-brand-sky hover:bg-primary text-white"
                     >
                       Schedule A Call
@@ -251,7 +251,7 @@ export function PricingSection() {
 
                   {/* CTA Button */}
                   <CalendlyButton
-                    calendlyUrl="https://calendly.com/bodybybunch"
+                    calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                     className="w-full mt-6 bg-muted-foreground hover:bg-foreground text-background"
                   >
                     Schedule A Call
@@ -269,7 +269,7 @@ export function PricingSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyButton
-              calendlyUrl="https://calendly.com/bodybybunch"
+              calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
               size="default"
               variant="outline"
               className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white"
@@ -278,7 +278,7 @@ export function PricingSection() {
               Schedule Free Consultation
             </CalendlyButton>
             <CalendlyButton
-              calendlyUrl="https://calendly.com/bodybybunch"
+              calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
               size="default"
               className="bg-brand-sky hover:bg-primary text-white"
             >
