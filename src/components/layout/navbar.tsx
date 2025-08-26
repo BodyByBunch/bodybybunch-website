@@ -117,7 +117,7 @@ export function Navbar() {
             className="bg-brand-sky hover:bg-primary text-white"
           >
             <Calendar className="mr-2 h-4 w-4" />
-            Schedule
+            Request a Callback
           </CalendlyButton>
         </div>
 

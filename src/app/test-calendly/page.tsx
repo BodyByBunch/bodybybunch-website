@@ -19,7 +19,7 @@ export default function TestCalendlyPage() {
                 size="lg"
               >
                 <Calendar className="mr-2 h-5 w-5" />
-                Schedule Free Consultation (Default)
+                Request a Callback (Default)
               </CalendlyButton>
 
               <CalendlyButton
@@ -28,7 +28,7 @@ export default function TestCalendlyPage() {
                 size="lg"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Book a Call (Outline)
+                Request a Callback (Outline)
               </CalendlyButton>
 
               <CalendlyButton

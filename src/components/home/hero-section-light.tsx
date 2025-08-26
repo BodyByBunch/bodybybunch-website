@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { CalendlyButton } from '@/components/ui/calendly-button';
 import { Award, MapPin, Target, Heart, ArrowRight } from 'lucide-react';
-import { HeroImageCarousel } from './hero-image-carousel';
+import { HeroImageCarousel } from '@/components/shared/hero-image-carousel';
 
 
 export function HeroSectionLight() {

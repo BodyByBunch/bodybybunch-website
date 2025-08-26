@@ -139,7 +139,7 @@ export function PricingSection() {
                     calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                     className="w-full mt-6 bg-muted-foreground hover:bg-foreground text-background"
                   >
-                    Schedule A Call
+                    Request a Callback
                   </CalendlyButton>
                 </CardContent>
               </Card>
@@ -200,7 +200,7 @@ export function PricingSection() {
                       calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                       className="w-full mt-6 bg-brand-sky hover:bg-primary text-white"
                     >
-                      Schedule A Call
+                      Request a Callback
                     </CalendlyButton>
                   </CardContent>
                 </Card>
@@ -254,7 +254,7 @@ export function PricingSection() {
                     calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
                     className="w-full mt-6 bg-muted-foreground hover:bg-foreground text-background"
                   >
-                    Schedule A Call
+                    Request a Callback
                   </CalendlyButton>
                 </CardContent>
               </Card>
@@ -275,7 +275,7 @@ export function PricingSection() {
               className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white"
             >
               <Calendar className="mr-2 h-4 w-4" />
-              Schedule Free Consultation
+              Request a Callback
             </CalendlyButton>
             <CalendlyButton
               calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
@@ -283,7 +283,7 @@ export function PricingSection() {
               className="bg-brand-sky hover:bg-primary text-white"
             >
               <Phone className="mr-2 h-4 w-4" />
-              Book a Call
+              Request a Callback
             </CalendlyButton>
           </div>
           <p className="text-sm text-muted-foreground mt-4">

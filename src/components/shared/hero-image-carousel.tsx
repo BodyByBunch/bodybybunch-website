@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Award, MapPin, Heart } from 'lucide-react';
 
 interface HeroImageCarouselProps {
@@ -23,26 +22,18 @@ export function HeroImageCarousel({
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   // Navigation functions
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNext = () => {
+  const goToNext = React.useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [images.length]);
 
   // Auto-advance carousel - moved before early return
   React.useEffect(() => {
     if (!images || images.length === 0) return;
-    
     const interval = setInterval(() => {
       goToNext();
     }, 5000); // Change image every 5 seconds
-
     return () => clearInterval(interval);
   }, [images, goToNext]);
 
@@ -75,7 +66,6 @@ export function HeroImageCarousel({
             console.log('Image loaded successfully:', images[currentIndex]);
           }}
         />
-        
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20" />
       </div>
@@ -138,4 +128,6 @@ export function HeroImageCarousel({
       )}
     </div>
   );
-} 
+}
+
+

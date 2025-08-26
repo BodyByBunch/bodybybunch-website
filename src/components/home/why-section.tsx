@@ -157,7 +157,7 @@ export function WhySection() {
               className="bg-brand-sky text-white hover:bg-primary"
             >
               <Calendar className="mr-2 h-5 w-5" />
-              Schedule Consultation
+              Request a Callback
             </CalendlyButton>
             <Link href="#services">
               <Button

@@ -36,7 +36,7 @@ export function CTASection() {
             className="px-8 py-4 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white"
           >
             <Phone className="mr-2 h-5 w-5" />
-            Book a Call
+            Request a Callback
           </CalendlyButton>
         </div>
       </div>

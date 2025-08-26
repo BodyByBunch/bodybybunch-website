@@ -105,7 +105,7 @@ export function Footer() {
                   variant="default"
                   className="w-full bg-brand-sky hover:bg-brand-sky/90 text-white dark:text-white"
                 >
-                  Schedule Consultation
+                  Request a Callback
                 </CalendlyButton>
                 {/* <Link href="/contact">
                   <button className="w-full px-4 py-2 text-sm border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-colors rounded-md">
