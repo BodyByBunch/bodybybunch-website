@@ -9,12 +9,15 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
+const tsParser = (await import("@typescript-eslint/parser")).default;
+const tsPlugin = (await import("@typescript-eslint/eslint-plugin")).default;
+
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals"),
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {
-      parser: await import("@typescript-eslint/parser"),
+      parser: tsParser,
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
@@ -24,7 +27,7 @@ const eslintConfig = [
       },
     },
     plugins: {
-      "@typescript-eslint": await import("@typescript-eslint/eslint-plugin"),
+      "@typescript-eslint": tsPlugin,
     },
     rules: {
       // Temporarily disable strict rules for build

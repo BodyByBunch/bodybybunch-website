@@ -1,154 +1,107 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { GraduationCap, Award, Users, TrendingUp } from 'lucide-react';
+import { Award, Dumbbell, GraduationCap, MapPin, TrendingUp, Users } from 'lucide-react';
+
+import { headingStyles, sectionStyles } from '@/lib/design';
+import { cn } from '@/lib/utils';
+
+const credentials = [
+  {
+    title: 'ISSA Certified',
+    detail: 'Personal Trainer',
+    icon: Award,
+  },
+  {
+    title: 'PN1 Nutritionist',
+    detail: 'Nutrition coaching',
+    icon: TrendingUp,
+  },
+  {
+    title: 'Texas State University',
+    detail: 'Exercise Sports Science & Coaching',
+    icon: GraduationCap,
+  },
+] as const;
+
+const experience = [
+  { label: 'Personal Trainer', icon: Dumbbell },
+  { label: 'Boot Camp Leader', icon: Users },
+  { label: 'Outdoor Fitness Coach', icon: MapPin },
+  { label: 'Fitness Manager', icon: Award },
+] as const;
+
+const stats = [
+  { value: '5+', label: 'years certified' },
+  { value: '100+', label: 'clients trained' },
+  { value: 'Local + online', label: 'coaching options' },
+] as const;
 
 export function AboutCredentials() {
   return (
-    <section className="py-20 bg-background">
+    <section className={sectionStyles.default}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Professional Credentials & Experience
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Over 5 years of certified experience with comprehensive education and diverse industry expertise.
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <div className="space-y-2 mb-5">
+            <div className={headingStyles.rule} />
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+              Credentials & Coaching Range
+            </h2>
+            <div className={headingStyles.rule} />
+          </div>
+          <p className="text-lg leading-8 text-muted-foreground">
+            Evidence-based coaching backed by education, certifications, and years of work across personal training, nutrition, and fitness leadership.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          {/* Education Section */}
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Education</h3>
-              <p className="text-muted-foreground">Academic foundation in exercise science and coaching</p>
+        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="rounded-lg border border-border bg-surface-raised p-5 shadow-sm sm:p-7">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-proof">
+              Foundation
+            </p>
+            <div className="mt-5 space-y-4">
+              {credentials.map((credential) => {
+                const Icon = credential.icon;
+
+                return (
+                  <div key={credential.title} className="flex items-start gap-4 rounded-lg bg-muted/35 p-4">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-action/10 text-action">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground">{credential.title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">{credential.detail}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <Card className="max-w-2xl mx-auto">
-              <CardHeader className="text-center">
-                <div className="mx-auto w-16 h-16 bg-action/10 rounded-full flex items-center justify-center mb-4">
-                  <GraduationCap className="h-8 w-8 text-action" />
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-raised p-5 shadow-sm sm:p-7">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-proof">
+              Experience
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {experience.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div key={item.label} className="flex items-center gap-3 rounded-lg border border-border px-4 py-3">
+                    <Icon className="h-4 w-4 text-action" />
+                    <span className="text-sm font-semibold text-foreground">{item.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-7 grid gap-3 border-t border-border pt-6 sm:grid-cols-3">
+              {stats.map((stat) => (
+                <div key={stat.value}>
+                  <div className={cn('text-2xl font-bold', stat.value === 'Local + online' ? 'text-proof' : 'text-action')}>
+                    {stat.value}
+                  </div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
-                <CardTitle className="text-xl">Texas State University</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-lg font-semibold text-foreground mb-2">Bachelor&apos;s Degree - 2018</p>
-                <p className="text-muted-foreground">
-                  Exercise Sports Science and Coaching
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Certifications Section */}
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Certifications</h3>
-              <p className="text-muted-foreground">Professional credentials and specializations</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <Card className="text-center">
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-action/10 rounded-full flex items-center justify-center mb-4">
-                    <Award className="h-8 w-8 text-action" />
-                  </div>
-                  <CardTitle className="text-lg">NASM Certified</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Personal Trainer</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-proof/10 rounded-full flex items-center justify-center mb-4">
-                    <Award className="h-8 w-8 text-proof" />
-                  </div>
-                  <CardTitle className="text-lg">NASM Certified</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Nutrition Coach</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-action/10 rounded-full flex items-center justify-center mb-4">
-                    <TrendingUp className="h-8 w-8 text-action" />
-                  </div>
-                  <CardTitle className="text-lg">Specialist</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Weight Loss Specialist</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Experience Section */}
-          <div>
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Industry Experience</h3>
-              <p className="text-muted-foreground">Diverse roles across the fitness industry</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="mx-auto w-12 h-12 bg-action/10 rounded-full flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-action" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2">Personal Trainer</h4>
-                  <p className="text-sm text-muted-foreground">One-on-one coaching</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="mx-auto w-12 h-12 bg-proof/10 rounded-full flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-proof" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2">Boot Camp Leader</h4>
-                  <p className="text-sm text-muted-foreground">Group fitness classes</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="mx-auto w-12 h-12 bg-proof/10 rounded-full flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-proof" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2">Outdoor Fitness Coach</h4>
-                  <p className="text-sm text-muted-foreground">Nature-based training</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <div className="mx-auto w-12 h-12 bg-muted rounded-full flex items-center justify-center mb-4">
-                    <Award className="h-6 w-6 text-muted-foreground" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2">Fitness Manager</h4>
-                  <p className="text-sm text-muted-foreground">Leadership & operations</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Stats Section */}
-          <div className="mt-16 text-center">
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div>
-                                  <div className="text-3xl font-bold text-action mb-2">5+</div>
-                <p className="text-lg font-semibold text-foreground mb-1">Years Certified</p>
-                <p className="text-sm text-muted-foreground">Personal Training Experience</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-proof mb-2">100+</div>
-                <p className="text-lg font-semibold text-foreground mb-1">Clients Trained</p>
-                <p className="text-sm text-muted-foreground">Nationwide Online Coaching</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-proof mb-2">Multiple</div>
-                <p className="text-lg font-semibold text-foreground mb-1">Industry Roles</p>
-                <p className="text-sm text-muted-foreground">Comprehensive Experience</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>

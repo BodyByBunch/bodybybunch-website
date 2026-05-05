@@ -16,7 +16,7 @@ export default function HomePage() {
       <ServicesSection />
       <Separator />
       <PricingSection />
-      <TestimonialsSectionEnhanced layout="circular" />
+      <TestimonialsSectionEnhanced />
       <CTASection />
     </div>
   );

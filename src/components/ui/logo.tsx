@@ -60,7 +60,7 @@ export function Logo({
         width={logo.width}
         height={logo.height}
         priority={priority}
-        className={`object-contain ${sizeClass} ${className} dark:hidden`}
+        className={`w-auto object-contain ${sizeClass} ${className} dark:hidden`}
       />
       {/* Dark mode logo */}
       <Image
@@ -69,7 +69,7 @@ export function Logo({
         width={logo.width}
         height={logo.height}
         priority={priority}
-        className={`object-contain ${sizeClass} ${className} hidden dark:block`}
+        className={`w-auto object-contain ${sizeClass} ${className} hidden dark:block`}
       />
     </div>
   )

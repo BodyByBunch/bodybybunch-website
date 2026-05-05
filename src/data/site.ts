@@ -6,9 +6,9 @@ export const SITE_CONTACT = {
 } as const;
 
 export const SITE_CTA_LABELS = {
-  callback: 'Request a Callback',
-  consultation: 'Schedule Free Consultation',
-  getStarted: 'Get Started Today',
+  callback: 'Get Started Now',
+  consultation: 'Get Started Now',
+  getStarted: 'Get Started Now',
 } as const;
 
 export const SITE_NAV_ITEMS = [
@@ -16,7 +16,6 @@ export const SITE_NAV_ITEMS = [
   { href: '/about', label: 'About' },
   { href: '#pricing', label: 'Plans + Pricing' },
   { href: '/testimonials', label: 'Client Testimonials' },
-  { href: '#faqs', label: 'FAQs' },
 ] as const;
 
 export const SITE_SOCIAL_LINKS = [

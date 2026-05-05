@@ -1,10 +1,12 @@
 'use client';
 
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import { ContactButton } from '@/components/ui/contact-button';
 import { SITE_CTA_LABELS } from '@/data/site';
 import { ctaStyles, headingStyles, sectionStyles } from '@/lib/design';
 import { cn } from '@/lib/utils';
-import { Calendar, ClipboardList } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -26,17 +28,19 @@ export function CTASection() {
             size="default"
             className={cn('px-8 py-4 border-0', ctaStyles.primary)}
           >
-            <Calendar className="mr-2 h-5 w-5" />
-            {SITE_CTA_LABELS.consultation}
+            {SITE_CTA_LABELS.callback}
           </ContactButton>
-          <ContactButton
+          <Button
             variant="outline"
             size="default"
             className={cn('px-8 py-4', ctaStyles.proof)}
+            asChild
           >
-            <ClipboardList className="mr-2 h-5 w-5" />
-            {SITE_CTA_LABELS.callback}
-          </ContactButton>
+            <Link href="/#pricing">
+              View Programs
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

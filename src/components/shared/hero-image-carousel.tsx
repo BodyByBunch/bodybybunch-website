@@ -8,12 +8,14 @@ interface HeroImageCarouselProps {
   images: string[];
   showBadges?: boolean;
   className?: string;
+  priority?: boolean;
 }
 
 export function HeroImageCarousel({ 
   images, 
   showBadges = true, 
-  className = "relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl" 
+  className = "relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl",
+  priority = false,
 }: HeroImageCarouselProps) {
   // State for current image index
   const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -54,7 +56,7 @@ export function HeroImageCarousel({
           alt={`Hero image ${currentIndex + 1}`}
           fill
           className="object-cover transition-opacity duration-500"
-          priority={currentIndex === 0}
+          priority={priority || currentIndex === 0}
           sizes="(max-width: 768px) 100vw, 50vw"
           onError={(e) => {
             console.error('Image failed to load:', images[currentIndex], e);

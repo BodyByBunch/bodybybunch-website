@@ -1,10 +1,12 @@
 'use client';
 
 import { HeroImageCarousel } from '@/components/shared/hero-image-carousel';
+import { Button } from '@/components/ui/button';
 import { ContactButton } from '@/components/ui/contact-button';
 import { ABOUT_HERO_IMAGES, SITE_CTA_LABELS } from '@/data/site';
 import { ctaStyles, sectionStyles } from '@/lib/design';
-import { Calendar, ClipboardList } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export function AboutHero() {
   return (
@@ -18,6 +20,7 @@ export function AboutHero() {
               <HeroImageCarousel 
                 images={[...ABOUT_HERO_IMAGES]}
                 showBadges={false}
+                priority
                 className="relative w-full h-[500px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl"
               />
               {/* Credentials badge */}
@@ -60,17 +63,19 @@ export function AboutHero() {
                   size="lg"
                   className={ctaStyles.primary}
                 >
-                  <Calendar className="mr-2 h-5 w-5" />
                   {SITE_CTA_LABELS.consultation}
                 </ContactButton>
-                <ContactButton
-                  variant="outline"
+                <Button
                   size="lg"
+                  variant="outline"
                   className={ctaStyles.outline}
+                  asChild
                 >
-                  <ClipboardList className="mr-2 h-5 w-5" />
-                  {SITE_CTA_LABELS.callback}
-                </ContactButton>
+                  <Link href="/#pricing">
+                    View Programs
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

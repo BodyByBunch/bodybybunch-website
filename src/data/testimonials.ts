@@ -144,7 +144,7 @@ export const featuredTestimonials: FeaturedTestimonial[] = [
   },
 ];
 
-// Transformation photos for Masonry grid
+// Transformation photos for the testimonials archive
 export const transformationItems: TransformationItem[] = [
   {
     id: 'transform-1',

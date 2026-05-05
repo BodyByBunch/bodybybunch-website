@@ -17,9 +17,9 @@ function StoryRow({ row }: { row: AboutStoryRow }) {
           <Image
             src={row.image}
             alt={row.alt}
-            width={256}
-            height={256}
-            className="object-cover rounded-xl"
+            fill
+            sizes="256px"
+            className="object-cover"
             loading="lazy"
           />
           <div className={cn('absolute inset-0 rounded-xl', mediaStyles.overlay)} />

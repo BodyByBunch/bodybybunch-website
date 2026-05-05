@@ -71,7 +71,15 @@ export function HeroSection({ theme = 'light' }: HeroSectionProps) {
               >
                 {SITE_CTA_LABELS.getStarted}
               </ContactButton>
-              <Button size="lg" variant="outline" className="h-10 sm:h-10 text-sm sm:text-lg px-3 sm:px-8 transition-all duration-300 border-text-subtle text-text-subtle hover:bg-brand hover:text-brand-foreground" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className={cn(
+                  'h-10 sm:h-10 text-sm sm:text-lg px-3 sm:px-8 transition-all duration-300',
+                  ctaStyles.outline
+                )}
+                asChild
+              >
                 <a href="#why">
                   <ArrowRight className="mr-2 h-5 w-5" />
                   Learn More
@@ -89,6 +97,7 @@ export function HeroSection({ theme = 'light' }: HeroSectionProps) {
               <HeroImageCarousel
                 images={[...HERO_IMAGES[theme]]}
                 showBadges={false}
+                priority
                 className={cn(
                   'relative w-full rounded-2xl overflow-hidden shadow-2xl',
                   config.carouselClassName

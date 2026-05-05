@@ -1,93 +1,81 @@
 'use client';
 
+import { useState } from 'react';
+import Image from 'next/image';
+import { Camera, Trophy } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
 import { transformationItems } from '@/data/testimonials';
-import Masonry from '@/components/ui/Masonry';
-import { Star } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { ctaStyles } from '@/lib/design';
+import { ctaStyles, headingStyles, sectionStyles } from '@/lib/design';
+import { cn } from '@/lib/utils';
+
+const INITIAL_COUNT = 12;
 
 export function TransformationsGrid() {
-  const [isMobile, setIsMobile] = useState(false);
   const [showAllItems, setShowAllItems] = useState(false);
+  const displayItems = showAllItems ? transformationItems : transformationItems.slice(0, INITIAL_COUNT);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Limit items on mobile to prevent layout issues unless user requests all items
-  const displayItems = (isMobile && !showAllItems) ? transformationItems.slice(0, 12) : transformationItems;
   return (
-    <section className="py-20 bg-muted/30">
+    <section className={cn(sectionStyles.strong, 'border-y border-section-strong-foreground/10')}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Client Transformations
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <div className="mb-4 flex justify-center">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-action/10 text-action">
+              <Camera className="h-6 w-6" />
+            </div>
+          </div>
+          <h2 className={cn(headingStyles.strongSectionTitle, 'mb-4')}>
+            Transformation Archive
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See the incredible results our clients have achieved through personalized training, 
-            nutrition coaching, and consistent accountability.
+          <p className={headingStyles.strongSectionLead}>
+            A static gallery of client progress photos, kept simple so the results stay the focus.
           </p>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="max-w-7xl mx-auto mb-16">
-          <div className={`${showAllItems ? 'max-h-none' : 'max-h-[600px] md:max-h-[800px] lg:max-h-none'} overflow-hidden`}>
-            <Masonry
-              items={displayItems}
-              ease="power3.out"
-              duration={0.6}
-              stagger={0.05}
-              animateFrom="bottom"
-              scaleOnHover={true}
-              hoverScale={0.95}
-              blurToFocus={true}
-              colorShiftOnHover={false}
-            />
-          </div>
-          {isMobile && !showAllItems && transformationItems.length > 12 && (
-            <div className="text-center mt-8">
-              <p className="text-muted-foreground mb-4">
-                Showing {displayItems.length} of {transformationItems.length} transformations
-              </p>
-              <button 
-                onClick={() => setShowAllItems(true)}
-                className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors px-6 py-2 ${ctaStyles.primary}`}
-              >
-                View All Transformations
-              </button>
-            </div>
-          )}
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {displayItems.map((item, index) => (
+            <article
+              key={item.id}
+              className={cn(
+                'group overflow-hidden rounded-lg border border-section-strong-foreground/10 bg-surface-raised text-foreground shadow-lg transition-transform duration-300 hover:-translate-y-1',
+                index % 5 === 0 && 'lg:row-span-2'
+              )}
+            >
+              <div className={cn('relative bg-section-strong', index % 5 === 0 ? 'min-h-[420px]' : 'min-h-[280px]')}>
+                <Image
+                  src={item.img}
+                  alt={item.name ?? 'Client transformation'}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-section-strong via-section-strong/10 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <div className="flex items-center gap-2 text-section-strong-foreground">
+                    <Trophy className="h-4 w-4 text-proof" />
+                    <h3 className="text-sm font-bold uppercase tracking-[0.12em]">
+                      {item.name}
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-section-strong-foreground/75">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
 
-        {/* Success Stats Section */}
-        <div className="text-center">
-          <h3 className="text-3xl font-bold text-foreground mb-8">
-            Proven Results That Speak for Themselves
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div>
-              <div className="text-3xl font-bold text-action mb-2">500+</div>
-              <p className="text-lg font-semibold text-foreground">Successful Transformations</p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center gap-1 mb-2">
-                <div className="text-3xl font-bold text-proof">5</div>
-                <Star className="h-6 w-6 fill-proof text-proof" />
-              </div>
-              <p className="text-lg font-semibold text-foreground">Average Client Rating</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-proof mb-2">95%</div>
-              <p className="text-lg font-semibold text-foreground">Client Success Rate</p>
-            </div>
+        {!showAllItems && transformationItems.length > INITIAL_COUNT ? (
+          <div className="mt-10 text-center">
+            <p className="mb-4 text-sm text-section-strong-foreground/65">
+              Showing {displayItems.length} of {transformationItems.length} transformations
+            </p>
+            <Button type="button" className={ctaStyles.primary} onClick={() => setShowAllItems(true)}>
+              View All Transformations
+            </Button>
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );

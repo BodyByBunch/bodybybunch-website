@@ -7,7 +7,6 @@ import { SITE_CTA_LABELS } from '@/data/site';
 import { WHY_POINTS } from '@/data/marketing';
 import { ctaStyles, headingStyles, mediaStyles, sectionStyles } from '@/lib/design';
 import { cn } from '@/lib/utils';
-import { ClipboardList } from 'lucide-react';
 import Link from 'next/link';
 
 type WhyPoint = (typeof WHY_POINTS)[number];
@@ -22,9 +21,9 @@ function WhyRow({ point }: { point: WhyPoint }) {
           <Image
             src={point.image}
             alt={point.alt}
-            width={256}
-            height={256}
-            className="object-cover rounded-xl"
+            fill
+            sizes="256px"
+            className="object-cover"
           />
           <div className={cn('absolute inset-0 rounded-xl', mediaStyles.overlay)} />
         </div>
@@ -74,7 +73,6 @@ export function WhySection() {
               size="default"
               className={ctaStyles.primary}
             >
-              <ClipboardList className="mr-2 h-5 w-5" />
               {SITE_CTA_LABELS.callback}
             </ContactButton>
             <Link href="#services">

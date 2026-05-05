@@ -1,35 +1,43 @@
 export const SERVICES = [
   {
     title: 'Full Program',
+    outcome: 'Complete coaching system',
     image: '/images/services/services_img_1.jpeg',
     alt: 'Full Program Training',
     shadowClassName: 'hover:shadow-action/20',
     description:
       'Complete cardio, nutrition, and workout programs including coaching, education, Zoom meetings, form corrections, progressive overloading, and biomechanics guidance.',
+    includes: ['Training structure', 'Nutrition clarity', '3-6x check-ins', 'Weekly data review'],
   },
   {
     title: 'Nutritional Coaching',
+    outcome: 'Food confidence',
     image: '/images/services/services_img_2.jpg',
     alt: 'Nutritional Coaching',
     shadowClassName: 'hover:shadow-proof/20',
     description:
       'Daily coaching through nutritional choices, scheduling, and macro manipulation. Learn to live a joyful, balanced lifestyle - this is not a set "meal plan."',
+    includes: ['Macro manipulation', 'Lifestyle education', 'Daily choices'],
   },
   {
     title: 'Daily Accountability',
+    outcome: 'Support between check-ins',
     image: '/images/services/services_img_3.jpeg',
     alt: 'Daily Accountability',
     shadowClassName: 'hover:shadow-action/20',
     description:
       '3-6x weekly check-ins depending on your needs. Available anytime for questions, education, and support. Personalized approach because you are unique.',
+    includes: ['3-6x weekly check-ins', 'Questions anytime', 'Personal support'],
   },
   {
     title: 'Weekly Check-ins',
+    outcome: 'Measured progress',
     image: '/images/services/services_img_4.jpeg',
     alt: 'Weekly Check-ins',
     shadowClassName: 'hover:shadow-proof/20',
     description:
       'Every Monday we analyze your data from the past week: average body weight, weekly goals, accomplishments, and create a plan for the following week.',
+    includes: ['Average body weight', 'Weekly goals', 'Next plan'],
   },
 ] as const;
 

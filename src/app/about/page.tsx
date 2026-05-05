@@ -4,19 +4,19 @@ import { AboutHero, AboutStory, AboutCredentials } from '@/components/about';
 import { TrainingGallery } from '@/components/about/training-gallery';
 
 export const metadata: Metadata = {
-  title: 'About Lane Bunch - NASM Certified Personal Trainer',
-  description: 'Meet Lane Bunch, NASM Certified Personal Trainer and Nutrition Coach in San Antonio, TX. Learn about his fitness journey, certifications, and passion for helping clients transform their lives.',
+  title: 'About Lane Bunch - ISSA Certified Personal Trainer',
+  description: 'Meet Lane Bunch, ISSA Certified Personal Trainer and PN1 Nutritionist in San Antonio, TX. Learn about his fitness journey, certifications, and passion for helping clients transform their lives.',
   keywords: [
     'Lane Bunch',
-    'NASM certified trainer',
+    'ISSA certified trainer',
     'personal trainer San Antonio',
     'fitness coach background',
     'trainer biography',
     'nutrition coach credentials'
   ],
   openGraph: {
-    title: 'About Lane Bunch - NASM Certified Personal Trainer',
-    description: 'Meet Lane Bunch, NASM Certified Personal Trainer and Nutrition Coach in San Antonio, TX. Learn about his fitness journey and passion for transformation.',
+    title: 'About Lane Bunch - ISSA Certified Personal Trainer',
+    description: 'Meet Lane Bunch, ISSA Certified Personal Trainer and PN1 Nutritionist in San Antonio, TX. Learn about his fitness journey and passion for transformation.',
     url: '/about',
     images: [
       {
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'About Lane Bunch - NASM Certified Personal Trainer',
-    description: 'Meet Lane Bunch, NASM Certified Personal Trainer and Nutrition Coach in San Antonio, TX.',
+    title: 'About Lane Bunch - ISSA Certified Personal Trainer',
+    description: 'Meet Lane Bunch, ISSA Certified Personal Trainer and PN1 Nutritionist in San Antonio, TX.',
   },
   alternates: {
     canonical: '/about',
@@ -42,6 +42,7 @@ export default function AboutPage() {
       <main>
         <AboutHero />
         <AboutStory />
+        <AboutCredentials />
         <TrainingGallery />
       </main>
     </div>

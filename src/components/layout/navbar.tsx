@@ -9,7 +9,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { SITE_CTA_LABELS, SITE_NAV_ITEMS } from "@/data/site";
 import { ctaStyles } from "@/lib/design";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import { ChevronRight, ClipboardList, Menu, X } from "lucide-react"
+import { ChevronRight, Menu, X } from "lucide-react"
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { smoothScrollTo } from "@/lib/smoothScroll";
@@ -103,7 +103,6 @@ export function Navbar() {
             size="sm"
             className={ctaStyles.primary}
           >
-            <ClipboardList className="mr-2 h-4 w-4" />
             {SITE_CTA_LABELS.callback}
           </ContactButton>
         </div>
@@ -166,7 +165,6 @@ export function Navbar() {
                 className={`${ctaStyles.primary} h-11 w-full text-sm font-semibold`}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <ClipboardList className="mr-2 h-4 w-4" />
                 {SITE_CTA_LABELS.callback}
               </ContactButton>
               <SocialIcons className="flex justify-center gap-5" iconClassName="h-4 w-4" />

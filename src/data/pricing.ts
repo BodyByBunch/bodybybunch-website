@@ -1,16 +1,19 @@
 export type PricingPeriod = '1year' | '6months' | '3months';
 
-export const PRICING_PERIODS: Array<{ value: PricingPeriod; label: string }> = [
-  { value: '1year', label: '1 Year' },
-  { value: '6months', label: '6 Months' },
-  { value: '3months', label: '3 Months' },
+export const PRICING_PERIODS: Array<{ value: PricingPeriod; label: string; helper: string }> = [
+  { value: '1year', label: '1 Year', helper: 'Best monthly rate' },
+  { value: '6months', label: '6 Months', helper: 'Balanced commitment' },
+  { value: '3months', label: '3 Months', helper: 'Fastest start' },
 ];
 
 export const PRICING_PLANS = [
   {
     id: 'workout',
     title: 'Workout Coaching Only',
+    eyebrow: 'Training plan',
     description: 'Perfect for individuals looking to start their fitness journey.',
+    bestFor: 'Lifters who already have nutrition handled.',
+    outcome: 'A structured program with form feedback and progressive overload.',
     featured: false,
     prices: {
       '1year': 50,
@@ -28,7 +31,10 @@ export const PRICING_PLANS = [
   {
     id: 'full',
     title: 'Full Program',
+    eyebrow: 'Complete coaching',
     description: 'Ideal for comprehensive transformation with complete support.',
+    bestFor: 'Clients who want training, nutrition, and accountability in one system.',
+    outcome: 'The highest-touch option for total body composition change.',
     featured: true,
     prices: {
       '1year': 125,
@@ -48,7 +54,10 @@ export const PRICING_PLANS = [
   {
     id: 'nutrition',
     title: 'Nutrition Coaching Only',
+    eyebrow: 'Nutrition plan',
     description: 'Focus on nutritional guidance and lifestyle coaching.',
+    bestFor: 'People who train already but need food structure and check-ins.',
+    outcome: 'Clear macro guidance, habit coaching, and weekly adjustment.',
     featured: false,
     prices: {
       '1year': 50,

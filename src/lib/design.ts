@@ -14,9 +14,11 @@ export const headingStyles = {
 } as const;
 
 export const ctaStyles = {
-  primary: 'bg-action text-action-foreground hover:bg-action-hover',
-  outline: 'border-action text-action hover:bg-action hover:text-action-foreground',
-  proof: 'border-proof text-proof hover:bg-proof hover:text-brand',
+  primary: 'border border-action bg-action text-action-foreground hover:border-action-hover hover:bg-action-hover hover:text-action-foreground',
+  outline:
+    'border border-action bg-transparent text-action hover:border-action hover:bg-action hover:text-action-foreground dark:border-action dark:bg-transparent dark:text-action dark:hover:border-action dark:hover:bg-action dark:hover:text-action-foreground',
+  proof:
+    'border border-proof bg-transparent text-proof hover:border-proof hover:bg-proof hover:text-action-foreground dark:border-proof dark:bg-transparent dark:text-proof dark:hover:border-proof dark:hover:bg-proof dark:hover:text-action-foreground',
 } as const;
 
 export const mediaStyles = {
