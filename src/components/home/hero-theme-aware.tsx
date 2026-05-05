@@ -2,8 +2,7 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { HeroSection2 } from './hero-section-dark';
-import { HeroSectionLight } from './hero-section-light';
+import { HeroSection } from './hero-section';
 
 export function HeroThemeAware() {
   const { resolvedTheme } = useTheme();
@@ -17,7 +16,7 @@ export function HeroThemeAware() {
   if (!mounted) {
     return (
       <div className="opacity-0 pointer-events-none">
-        <HeroSectionLight />
+        <HeroSection theme="light" />
       </div>
     );
   }
@@ -25,7 +24,7 @@ export function HeroThemeAware() {
   // Once mounted, show the correct hero with smooth transition
   return (
     <div className="transition-opacity duration-200">
-      {resolvedTheme === 'dark' ? <HeroSection2 /> : <HeroSectionLight />}
+      <HeroSection theme={resolvedTheme === 'dark' ? 'dark' : 'light'} />
     </div>
   );
 }

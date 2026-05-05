@@ -35,15 +35,7 @@ This document outlines the planned features for Body By Bunch and how to impleme
   - Nutrition logs
   - Appointment scheduling
 
-### 4. **Appointment Booking (Calendly Integration)**
-- **Status**: Ready to implement
-- **Implementation**:
-  ```bash
-  # Install Calendly SDK
-  bun add @calendly/integrations
-  ```
-
-### 5. **AI Chatbot Integration**
+### 4. **AI Chatbot Integration**
 - **Status**: Ready to implement
 - **Options**:
   - OpenAI GPT integration

@@ -1,5 +1,4 @@
-export { HeroSection2 } from './hero-section-dark';
-export { HeroSectionLight } from './hero-section-light';
+export { HeroSection } from './hero-section';
 export { HeroThemeAware } from './hero-theme-aware';
 export { WhySection } from './why-section';
 export { ServicesSection } from './services-section';

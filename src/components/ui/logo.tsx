@@ -98,7 +98,7 @@ export function HeaderLogo() {
           width={200}
           height={60}
           priority
-          className="h-12 w-auto object-contain block dark:hidden"
+          className="h-10 md:h-12 w-auto object-contain block dark:hidden"
         />
         {/* Dark mode logo */}
         <Image
@@ -107,7 +107,7 @@ export function HeaderLogo() {
           width={200}
           height={60}
           priority
-          className="h-12 w-auto object-contain hidden dark:block"
+          className="h-10 md:h-12 w-auto object-contain hidden dark:block"
         />
       </div>
     </Link>

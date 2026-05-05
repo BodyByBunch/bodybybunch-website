@@ -41,7 +41,7 @@ export function TestimonialsHero() {
                       
                       {/* Achievement badge on image */}
                       <div className="absolute bottom-4 left-4">
-                        <Badge className="bg-brand-sky text-white text-sm px-3 py-1">
+                        <Badge className="bg-action text-action-foreground text-sm px-3 py-1">
                           {testimonial.achievement}
                         </Badge>
                       </div>
@@ -50,11 +50,11 @@ export function TestimonialsHero() {
                     {/* Content */}
                     <div className={`p-6 lg:p-8 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                       {/* Quote Icon */}
-                      <Quote className="h-8 w-8 text-brand-orange mb-4 opacity-60" />
+                      <Quote className="h-8 w-8 text-proof mb-4 opacity-60" />
                       
                       {/* Quote Text */}
                       <blockquote className="text-lg lg:text-xl text-foreground leading-relaxed mb-6 font-medium">
-                        "{testimonial.quote}"
+                        &quot;{testimonial.quote}&quot;
                       </blockquote>
 
                       {/* Client Info */}
@@ -71,7 +71,7 @@ export function TestimonialsHero() {
                         <div className="flex items-center gap-2">
                           <div className="flex">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="h-4 w-4 fill-brand-orange text-brand-orange" />
+                              <Star key={i} className="h-4 w-4 fill-proof text-proof" />
                             ))}
                           </div>
                           <span className="text-sm text-muted-foreground font-medium">
@@ -81,7 +81,7 @@ export function TestimonialsHero() {
 
                         {/* Read More Button */}
                         <button 
-                          className="group inline-flex items-center gap-2 text-brand-sky hover:text-primary font-semibold transition-colors text-sm"
+                          className="group inline-flex items-center gap-2 text-action hover:text-action-hover font-semibold transition-colors text-sm"
                           onClick={() => {
                             // You can implement a modal or expand functionality here
                             console.log('Read full testimonial:', testimonial.fullText);

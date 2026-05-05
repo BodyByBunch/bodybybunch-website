@@ -1,15 +1,14 @@
 'use client';
 
-import Image from 'next/image';
 import { HeroImageCarousel } from '@/components/shared/hero-image-carousel';
-import { Button } from '@/components/ui/button';
-import { CalendlyButton } from '@/components/ui/calendly-button';
-import { Phone, Calendar } from 'lucide-react';
-import Link from 'next/link';
+import { CallButton } from '@/components/ui/call-button';
+import { ABOUT_HERO_IMAGES, SITE_CTA_LABELS } from '@/data/site';
+import { ctaStyles, sectionStyles } from '@/lib/design';
+import { Calendar, Phone } from 'lucide-react';
 
 export function AboutHero() {
   return (
-    <section className="py-20 bg-background">
+    <section className={sectionStyles.default}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -17,21 +16,12 @@ export function AboutHero() {
             {/* Image Carousel - Order 1 on mobile (top), Order 2 on desktop (right) */}
             <div className="relative order-1 lg:order-2 w-full overflow-hidden">
               <HeroImageCarousel 
-                images={[
-                  '/images/about/about_img_8.jpg',
-                  '/images/about/about_img.jpeg',
-                  '/images/about/about_img_11.jpg',
-                  '/images/about/about_img_10.jpg',
-                  '/images/about/about_img_9.jpg',
-                  '/images/about/about_img_7.jpg',
-                  '/images/about/about_img_6.jpg',
-                  '/images/about/about_img_5.png'
-                ]}
+                images={[...ABOUT_HERO_IMAGES]}
                 showBadges={false}
                 className="relative w-full h-[500px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl"
               />
               {/* Credentials badge */}
-              <div className="absolute bottom-4 left-4 bg-brand-sky text-white px-6 py-3 rounded-lg shadow-lg">
+              <div className="absolute bottom-4 left-4 bg-action text-action-foreground px-6 py-3 rounded-lg shadow-lg">
                 <div className="text-sm font-semibold">ISSA Certified</div>
                 <div className="text-xs opacity-90">Personal Trainer & PN1 Nutritionist</div>
                 <div className="text-xs opacity-90 mt-1">Weight Loss Specialist</div>
@@ -46,7 +36,7 @@ export function AboutHero() {
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   My passion revolves around people. I strive every day to help others become the best version of themselves. 
-                  Fitness and nutrition aren't just a hobby for me. <strong className="text-brand-sky">It is me. It's who I am.</strong>
+                  Fitness and nutrition aren&apos;t just a hobby for me. <strong className="text-action">It is me. It&apos;s who I am.</strong>
                 </p>
               </div>
 
@@ -58,7 +48,7 @@ export function AboutHero() {
                 </p>
                 
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  I am a "forever student," constantly learning and growing in the fitness/nutrition world to be the best 
+                  I am a &quot;forever student,&quot; constantly learning and growing in the fitness/nutrition world to be the best 
                   trainer and coach for my clients. As long as you are communicating with me and being consistent and 
                   compliant to the program we design to the best of your ability, the results will follow.
                 </p>
@@ -66,23 +56,21 @@ export function AboutHero() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                <CalendlyButton
-                  calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
+                <CallButton
                   size="lg"
-                  className="bg-brand-sky hover:bg-primary text-white"
+                  className={ctaStyles.primary}
                 >
                   <Calendar className="mr-2 h-5 w-5" />
-                  Schedule Free Consultation
-                </CalendlyButton>
-                <CalendlyButton
-                  calendlyUrl="https://calendly.com/lanebunch-bodybybunch/phone-meeting"
+                  {SITE_CTA_LABELS.consultation}
+                </CallButton>
+                <CallButton
                   variant="outline"
                   size="lg"
-                  className="border-brand-sky text-brand-sky hover:bg-brand-sky hover:text-white"
+                  className={ctaStyles.outline}
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  Request a Callback
-                </CalendlyButton>
+                  {SITE_CTA_LABELS.callback}
+                </CallButton>
               </div>
             </div>
           </div>

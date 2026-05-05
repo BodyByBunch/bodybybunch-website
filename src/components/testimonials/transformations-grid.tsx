@@ -4,6 +4,7 @@ import { transformationItems } from '@/data/testimonials';
 import Masonry from '@/components/ui/Masonry';
 import { Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { ctaStyles } from '@/lib/design';
 
 export function TransformationsGrid() {
   const [isMobile, setIsMobile] = useState(false);
@@ -56,7 +57,7 @@ export function TransformationsGrid() {
               </p>
               <button 
                 onClick={() => setShowAllItems(true)}
-                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-brand-sky hover:bg-brand-sky/90 text-white px-6 py-2"
+                className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors px-6 py-2 ${ctaStyles.primary}`}
               >
                 View All Transformations
               </button>
@@ -71,18 +72,18 @@ export function TransformationsGrid() {
           </h3>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div>
-              <div className="text-3xl font-bold text-brand-sky mb-2">500+</div>
+              <div className="text-3xl font-bold text-action mb-2">500+</div>
               <p className="text-lg font-semibold text-foreground">Successful Transformations</p>
             </div>
             <div>
               <div className="flex items-center justify-center gap-1 mb-2">
-                <div className="text-3xl font-bold text-brand-orange">5</div>
-                <Star className="h-6 w-6 fill-brand-orange text-brand-orange" />
+                <div className="text-3xl font-bold text-proof">5</div>
+                <Star className="h-6 w-6 fill-proof text-proof" />
               </div>
               <p className="text-lg font-semibold text-foreground">Average Client Rating</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-brand-orange-light mb-2">95%</div>
+              <div className="text-3xl font-bold text-proof mb-2">95%</div>
               <p className="text-lg font-semibold text-foreground">Client Success Rate</p>
             </div>
           </div>

@@ -1,5 +1,7 @@
-import { Instagram, Facebook, LucideIcon } from 'lucide-react';
-import { forwardRef } from 'react';
+import { Facebook, Instagram } from 'lucide-react';
+import { forwardRef, type ComponentType } from 'react';
+
+import { SITE_SOCIAL_LINKS } from '@/data/site';
 
 // TikTok icon component since it's not available in lucide-react
 const TikTok = forwardRef<SVGSVGElement, { className?: string }>(
@@ -20,26 +22,24 @@ TikTok.displayName = 'TikTok';
 
 export interface SocialLink {
   name: string;
-  icon: LucideIcon;
   href: string;
 }
 
 interface SocialIconsProps {
-  links?: SocialLink[];
+  links?: readonly SocialLink[];
   className?: string;
   iconClassName?: string;
   show?: boolean;
 }
 
-// Default social links for Body By Bunch
-const defaultSocialLinks: SocialLink[] = [
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com/bodybybunch" },
-  { name: "Facebook", icon: Facebook, href: "https://facebook.com/lane.bunch.35" },
-  { name: "TikTok", icon: TikTok, href: "https://tiktok.com/@bodybybunch" },
-];
+const socialIcons: Record<string, ComponentType<{ className?: string }>> = {
+  Instagram,
+  Facebook,
+  TikTok,
+};
 
 export function SocialIcons({ 
-  links = defaultSocialLinks, 
+  links = SITE_SOCIAL_LINKS,
   className = "flex space-x-4",
   iconClassName = "h-5 w-5",
   show = true 
@@ -48,18 +48,22 @@ export function SocialIcons({
 
   return (
     <div className={className}>
-      {links.map((item) => (
-        <a
-          key={item.name}
-          href={item.href}
-          className="text-muted-foreground hover:text-brand-orange transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="sr-only">{item.name}</span>
-          <item.icon className={iconClassName} />
-        </a>
-      ))}
+      {links.map((item) => {
+        const Icon = socialIcons[item.name];
+
+        return (
+          <a
+            key={item.name}
+            href={item.href}
+            className="text-muted-foreground hover:text-action transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="sr-only">{item.name}</span>
+            {Icon ? <Icon className={iconClassName} /> : null}
+          </a>
+        );
+      })}
     </div>
   );
 } 

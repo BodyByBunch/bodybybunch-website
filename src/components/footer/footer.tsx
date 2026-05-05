@@ -1,30 +1,15 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import { FooterLogo } from '@/components/ui/logo';
-import { CalendlyButton, SocialIcons } from '@/components/ui';
+import { CallButton, SocialIcons } from '@/components/ui';
+import {
+  FOOTER_LEGAL_LINKS,
+  FOOTER_LINK_GROUPS,
+  SITE_CONTACT,
+  SITE_CTA_LABELS,
+} from '@/data/site';
+import { ctaStyles } from '@/lib/design';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
-
-const serviceLinks = [
-  { name: "Personal Training", href: "#pricing" },
-  { name: "Nutrition Coaching", href: "#pricing" },
-  { name: "Full Program", href: "#pricing" },
-  { name: "Daily Accountability", href: "#services" },
-]
-
-const aboutLinks = [
-  { name: "About Lane", href: "/about" },
-  { name: "Success Stories", href: "/testimonials" },
-  { name: "Training Philosophy", href: "/about" },
-  { name: "Credentials", href: "/about" },
-]
-
-const resourceLinks = [
-  { name: "Fitness Tips", href: "#" },
-  { name: "Nutrition Guidance", href: "#" },
-  { name: "FAQ", href: "#" },
-  { name: "Contact", href: "/contact" },
-]
-
-
 
 export function Footer() {
   return (
@@ -48,13 +33,15 @@ export function Footer() {
               
               {/* Contact Info */}
               <div className="space-y-3">
-                <div className="flex items-center justify-center sm:justify-start text-brand-orange-light">
+                <div className="flex items-center justify-center sm:justify-start text-proof">
                   <Phone className="mr-2 h-4 w-4" />
-                  <span className="text-sm font-medium">(512) 818-4281</span>
+                  <a href={SITE_CONTACT.phoneHref} className="text-sm font-medium hover:text-action transition-colors">
+                    {SITE_CONTACT.phoneDisplay}
+                  </a>
                 </div>
                 <div className="flex items-center justify-center sm:justify-start text-muted-foreground">
                   <MapPin className="mr-2 h-4 w-4" />
-                  <span className="text-sm">San Antonio, TX</span>
+                  <span className="text-sm">{SITE_CONTACT.location}</span>
                 </div>
               </div>
               
@@ -62,53 +49,36 @@ export function Footer() {
               <SocialIcons className="flex justify-center sm:justify-start space-x-4" />
             </div>
 
-            {/* Services */}
-            <div className="text-center sm:text-left">
-              <h3 className="text-sm font-semibold text-foreground">Services</h3>
-              <ul role="list" className="mt-6 space-y-4">
-                {serviceLinks.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-sm leading-6 text-muted-foreground hover:text-brand-orange transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* About */}
-            <div className="text-center sm:text-left">
-              <h3 className="text-sm font-semibold text-foreground">About</h3>
-              <ul role="list" className="mt-6 space-y-4">
-                {aboutLinks.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-sm leading-6 text-muted-foreground hover:text-brand-orange transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {FOOTER_LINK_GROUPS.map((group) => (
+              <div key={group.title} className="text-center sm:text-left">
+                <h3 className="text-sm font-semibold text-foreground">{group.title}</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {group.links.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="text-sm leading-6 text-muted-foreground hover:text-action transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
 
             {/* Get Started */}
             <div className="text-center sm:text-left">
               <h3 className="text-sm font-semibold text-foreground">Get Started</h3>
               <div className="mt-6 space-y-4">
-                <CalendlyButton
-                  calendlyUrl="https://calendly.com/lanebunch-bodybybunch/30min"
+                <CallButton
                   variant="default"
-                  className="w-full bg-brand-sky hover:bg-brand-sky/90 text-white dark:text-white"
+                  className={cn('w-full', ctaStyles.primary)}
                 >
-                  Request a Callback
-                </CalendlyButton>
+                  {SITE_CTA_LABELS.callback}
+                </CallButton>
                 {/* <Link href="/contact">
-                  <button className="w-full px-4 py-2 text-sm border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-colors rounded-md">
+                  <button className="w-full px-4 py-2 text-sm border border-proof text-proof hover:bg-proof hover:text-brand transition-colors rounded-md">
                     Contact Me
                   </button>
                 </Link> */}
@@ -123,12 +93,15 @@ export function Footer() {
                 &copy; {new Date().getFullYear()} Lane Bunch | Body By Bunch. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <Link href="/privacy" className="text-xs text-muted-foreground hover:text-brand-orange transition-colors">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="text-xs text-muted-foreground hover:text-brand-orange transition-colors">
-                  Terms of Service
-                </Link>
+                {FOOTER_LEGAL_LINKS.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-xs text-muted-foreground hover:text-action transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

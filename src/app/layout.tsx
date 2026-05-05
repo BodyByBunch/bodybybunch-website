@@ -102,12 +102,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <StructuredData />
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-        <script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          type="text/javascript"
-          async
-        ></script>
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider
