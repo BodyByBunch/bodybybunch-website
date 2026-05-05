@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { CallButton } from '@/components/ui/call-button';
+import { ContactButton } from '@/components/ui/contact-button';
 import { HERO_IMAGES, SITE_CTA_LABELS } from '@/data/site';
 import { ctaStyles, headingStyles } from '@/lib/design';
 import { cn } from '@/lib/utils';
@@ -65,12 +65,12 @@ export function HeroSection({ theme = 'light' }: HeroSectionProps) {
             </div>
 
             <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2.5 sm:gap-4 justify-center lg:justify-start">
-              <CallButton
+              <ContactButton
                 size="lg"
                 className={cn('h-10 sm:h-10 text-sm sm:text-lg px-3 sm:px-8 shadow-lg hover:shadow-xl transition-all duration-300', ctaStyles.primary)}
               >
                 {SITE_CTA_LABELS.getStarted}
-              </CallButton>
+              </ContactButton>
               <Button size="lg" variant="outline" className="h-10 sm:h-10 text-sm sm:text-lg px-3 sm:px-8 transition-all duration-300 border-text-subtle text-text-subtle hover:bg-brand hover:text-brand-foreground" asChild>
                 <a href="#why">
                   <ArrowRight className="mr-2 h-5 w-5" />

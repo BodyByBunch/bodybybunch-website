@@ -1,6 +1,6 @@
 import { MapPin, Phone } from 'lucide-react';
 import { FooterLogo } from '@/components/ui/logo';
-import { CallButton, SocialIcons } from '@/components/ui';
+import { ContactButton, SocialIcons } from '@/components/ui';
 import {
   FOOTER_LEGAL_LINKS,
   FOOTER_LINK_GROUPS,
@@ -71,12 +71,12 @@ export function Footer() {
             <div className="text-center sm:text-left">
               <h3 className="text-sm font-semibold text-foreground">Get Started</h3>
               <div className="mt-6 space-y-4">
-                <CallButton
+                <ContactButton
                   variant="default"
                   className={cn('w-full', ctaStyles.primary)}
                 >
                   {SITE_CTA_LABELS.callback}
-                </CallButton>
+                </ContactButton>
                 {/* <Link href="/contact">
                   <button className="w-full px-4 py-2 text-sm border border-proof text-proof hover:bg-proof hover:text-brand transition-colors rounded-md">
                     Contact Me

@@ -1,5 +1,5 @@
 export { Button } from './button';
-export { CallButton } from './call-button';
+export { ContactButton } from './contact-button';
 export { Input } from './input';
 export { Label } from './label';
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card';

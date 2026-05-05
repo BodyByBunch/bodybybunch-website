@@ -1,10 +1,10 @@
 'use client';
 
-import { CallButton } from '@/components/ui/call-button';
+import { ContactButton } from '@/components/ui/contact-button';
 import { SITE_CTA_LABELS } from '@/data/site';
 import { ctaStyles, headingStyles, sectionStyles } from '@/lib/design';
 import { cn } from '@/lib/utils';
-import { Phone, Calendar } from 'lucide-react';
+import { Calendar, ClipboardList } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -22,21 +22,21 @@ export function CTASection() {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <CallButton
+          <ContactButton
             size="default"
             className={cn('px-8 py-4 border-0', ctaStyles.primary)}
           >
             <Calendar className="mr-2 h-5 w-5" />
             {SITE_CTA_LABELS.consultation}
-          </CallButton>
-          <CallButton
+          </ContactButton>
+          <ContactButton
             variant="outline"
             size="default"
             className={cn('px-8 py-4', ctaStyles.proof)}
           >
-            <Phone className="mr-2 h-5 w-5" />
+            <ClipboardList className="mr-2 h-5 w-5" />
             {SITE_CTA_LABELS.callback}
-          </CallButton>
+          </ContactButton>
         </div>
       </div>
     </section>

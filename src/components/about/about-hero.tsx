@@ -1,10 +1,10 @@
 'use client';
 
 import { HeroImageCarousel } from '@/components/shared/hero-image-carousel';
-import { CallButton } from '@/components/ui/call-button';
+import { ContactButton } from '@/components/ui/contact-button';
 import { ABOUT_HERO_IMAGES, SITE_CTA_LABELS } from '@/data/site';
 import { ctaStyles, sectionStyles } from '@/lib/design';
-import { Calendar, Phone } from 'lucide-react';
+import { Calendar, ClipboardList } from 'lucide-react';
 
 export function AboutHero() {
   return (
@@ -56,21 +56,21 @@ export function AboutHero() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                <CallButton
+                <ContactButton
                   size="lg"
                   className={ctaStyles.primary}
                 >
                   <Calendar className="mr-2 h-5 w-5" />
                   {SITE_CTA_LABELS.consultation}
-                </CallButton>
-                <CallButton
+                </ContactButton>
+                <ContactButton
                   variant="outline"
                   size="lg"
                   className={ctaStyles.outline}
                 >
-                  <Phone className="mr-2 h-5 w-5" />
+                  <ClipboardList className="mr-2 h-5 w-5" />
                   {SITE_CTA_LABELS.callback}
-                </CallButton>
+                </ContactButton>
               </div>
             </div>
           </div>

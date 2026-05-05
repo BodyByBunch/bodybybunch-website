@@ -1,13 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { CallButton } from '@/components/ui/call-button';
+import { ContactButton } from '@/components/ui/contact-button';
 import { Button } from '@/components/ui/button';
 import { SITE_CTA_LABELS } from '@/data/site';
 import { WHY_POINTS } from '@/data/marketing';
 import { ctaStyles, headingStyles, mediaStyles, sectionStyles } from '@/lib/design';
 import { cn } from '@/lib/utils';
-import { Phone } from 'lucide-react';
+import { ClipboardList } from 'lucide-react';
 import Link from 'next/link';
 
 type WhyPoint = (typeof WHY_POINTS)[number];
@@ -70,13 +70,13 @@ export function WhySection() {
             Ready to experience a truly personalized approach to fitness?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CallButton
+            <ContactButton
               size="default"
               className={ctaStyles.primary}
             >
-              <Phone className="mr-2 h-5 w-5" />
+              <ClipboardList className="mr-2 h-5 w-5" />
               {SITE_CTA_LABELS.callback}
-            </CallButton>
+            </ContactButton>
             <Link href="#services">
               <Button
                 variant="outline"

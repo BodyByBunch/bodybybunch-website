@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { HeaderLogo } from "@/components/ui/logo"
 import { BrandName } from "@/components/ui/brand-name"
 import { Button } from "@/components/ui/button"
-import { CallButton, SocialIcons } from "@/components/ui"
+import { ContactButton, SocialIcons } from "@/components/ui"
 import { ModeToggle } from "@/components/mode-toggle";
 import { SITE_CTA_LABELS, SITE_NAV_ITEMS } from "@/data/site";
 import { ctaStyles } from "@/lib/design";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import { ChevronRight, Menu, Phone, X } from "lucide-react"
+import { ChevronRight, ClipboardList, Menu, X } from "lucide-react"
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { smoothScrollTo } from "@/lib/smoothScroll";
@@ -98,14 +98,14 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-4 ml-auto">
           <SocialIcons className="flex space-x-3" iconClassName="h-4 w-4" />
           <ModeToggle />
-          <CallButton
+          <ContactButton
             variant="default"
             size="sm"
             className={ctaStyles.primary}
           >
-            <Phone className="mr-2 h-4 w-4" />
+            <ClipboardList className="mr-2 h-4 w-4" />
             {SITE_CTA_LABELS.callback}
-          </CallButton>
+          </ContactButton>
         </div>
 
         {/* Mobile Menu Button - moved to far right */}
@@ -161,14 +161,14 @@ export function Navbar() {
             </div>
 
             <div className="mt-4 grid gap-3">
-              <CallButton
+              <ContactButton
                 size="lg"
                 className={`${ctaStyles.primary} h-11 w-full text-sm font-semibold`}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <Phone className="mr-2 h-4 w-4" />
+                <ClipboardList className="mr-2 h-4 w-4" />
                 {SITE_CTA_LABELS.callback}
-              </CallButton>
+              </ContactButton>
               <SocialIcons className="flex justify-center gap-5" iconClassName="h-4 w-4" />
             </div>
           </div>

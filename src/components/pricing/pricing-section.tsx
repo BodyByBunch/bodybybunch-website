@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, Phone, X } from 'lucide-react';
+import { Check, ClipboardList, X } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
-import { CallButton } from '@/components/ui/call-button';
+import { ContactButton } from '@/components/ui/contact-button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { PRICING_PERIODS, PRICING_PLANS, type PricingPeriod } from '@/data/pricing';
@@ -97,7 +97,7 @@ function PricingCard({ plan, selectedPeriod }: { plan: PricingPlan; selectedPeri
               ))}
             </div>
 
-            <CallButton
+            <ContactButton
               className={cn(
                 'w-full mt-6',
                 plan.featured
@@ -106,7 +106,7 @@ function PricingCard({ plan, selectedPeriod }: { plan: PricingPlan; selectedPeri
               )}
             >
               {SITE_CTA_LABELS.callback}
-            </CallButton>
+            </ContactButton>
           </CardContent>
         </Card>
       </div>
@@ -151,21 +151,21 @@ export function PricingSection() {
             Not sure which plan is right for you?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CallButton
+            <ContactButton
               size="default"
               variant="outline"
               className={ctaStyles.outline}
             >
-              <Phone className="mr-2 h-4 w-4" />
+              <ClipboardList className="mr-2 h-4 w-4" />
               {SITE_CTA_LABELS.callback}
-            </CallButton>
-            <CallButton
+            </ContactButton>
+            <ContactButton
               size="default"
               className={ctaStyles.primary}
             >
-              <Phone className="mr-2 h-4 w-4" />
+              <ClipboardList className="mr-2 h-4 w-4" />
               {SITE_CTA_LABELS.callback}
-            </CallButton>
+            </ContactButton>
           </div>
           <p className="text-sm text-muted-foreground mt-4">
             All plans are customized to your specific needs and goals.
